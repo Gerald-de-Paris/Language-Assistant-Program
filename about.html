@@ -69,6 +69,12 @@
     .academy-list { columns: 2; }
     .permit-table { grid-template-columns: 1fr; }
   }
+  body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
 </style>
 </head>
 <body>
@@ -168,6 +174,17 @@
   </div>
 
   <footer>&copy;Assistant de Langue Uganda. Gerard de Paris.</footer>
+  <script>
+  // Disable right-click menu (stops easy "Copy" via right-click)
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+
+  // Disable copy shortcut (Ctrl+C)
+  document.addEventListener('copy', function(e) {
+    e.preventDefault();
+  });
+</script>
 
 </body>
 </html>
