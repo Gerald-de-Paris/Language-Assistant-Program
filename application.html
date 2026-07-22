@@ -70,6 +70,12 @@
     nav { padding: 12px 20px; gap: 14px; }
     .content-wrap { padding: 30px 20px 50px; }
   }
+  body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
 </style>
 </head>
 <body>
@@ -232,6 +238,17 @@
   </div>
 
   <footer>&copy; Assistant de langue Uganda. Gerard De Paris.</footer>
+  <script>
+  // Disable right-click menu (stops easy "Copy" via right-click)
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+
+  // Disable copy shortcut (Ctrl+C)
+  document.addEventListener('copy', function(e) {
+    e.preventDefault();
+  });
+</script>
 
 </body>
 </html>
