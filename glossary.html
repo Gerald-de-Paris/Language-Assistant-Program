@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Glossary | Assistant Uganda</title>
+<title>Glossary | Assistants Uganda</title>
 <style>
   :root {
     --blue: #1B3A6B; --red: #B23A2E; --gold: #D9A441;
@@ -55,24 +55,39 @@
     -ms-user-select: none;
     user-select: none;
   }
+  .lang-toggle-btn {
+  background: transparent;
+  border: 1.5px solid var(--cream);
+  color: var(--cream);
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: auto;
+}
+.lang-toggle-btn:hover { background: rgba(255,255,255,0.15); }
+body.lang-fr .lang-en { display: none; }
+body:not(.lang-fr) .lang-fr { display: none; }
 </style>
 </head>
 <body>
 
   <div class="ribbon"><div class="b1"></div><div class="b2"></div><div class="b3"></div></div>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="eligibility.html">Eligibility</a>
-    <a href="application.html">Application</a>
-    <a href="documents.html">Documents</a>
-    <a href="interview.html">Interview Prep</a>
-    <a href="life-in-france.html">Life in France</a>
-    <a href="glossary.html">Glossary</a>
-    <a href="faq.html">FAQs</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+ <nav>
+  <a href="index.html"><span class="lang-en">Home</span><span class="lang-fr">Accueil</span></a>
+  <a href="about.html"><span class="lang-en">About</span><span class="lang-fr">À propos</span></a>
+  <a href="eligibility.html"><span class="lang-en">Eligibility</span><span class="lang-fr">Éligibilité</span></a>
+  <a href="application.html"><span class="lang-en">Application</span><span class="lang-fr">Candidature</span></a>
+  <a href="documents.html"><span class="lang-en">Documents</span><span class="lang-fr">Documents</span></a>
+  <a href="interview.html"><span class="lang-en">Interview Prep</span><span class="lang-fr">Préparation Entretien</span></a>
+  <a href="life-in-france.html"><span class="lang-en">Life in France</span><span class="lang-fr">Vivre en France</span></a>
+  <a href="glossary.html"><span class="lang-en">Glossary</span><span class="lang-fr">Glossaire</span></a>
+  <a href="faq.html"><span class="lang-en">FAQs</span><span class="lang-fr">FAQ</span></a>
+  <a href="contact.html"><span class="lang-en">Contact</span><span class="lang-fr">Contact</span></a>
+  <button class="lang-toggle-btn" id="langBtn" onclick="toggleLang()">Français</button>
+</nav>
 
   <div class="content-wrap">
     <p class="eyebrow">Reference</p>
@@ -229,6 +244,17 @@
     e.preventDefault();
   });
 </script>
-
+<script>
+  function applyLang(lang) {
+    document.body.classList.toggle('lang-fr', lang === 'fr');
+    document.getElementById('langBtn').textContent = lang === 'fr' ? 'English' : 'Français';
+    localStorage.setItem('siteLang', lang);
+  }
+  function toggleLang() {
+    const current = document.body.classList.contains('lang-fr') ? 'fr' : 'en';
+    applyLang(current === 'fr' ? 'en' : 'fr');
+  }
+  applyLang(localStorage.getItem('siteLang') || 'en');
+</script>
 </body>
 </html>
