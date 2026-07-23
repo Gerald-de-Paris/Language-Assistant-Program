@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Life in France | Assistant Uganda</title>
+<style>
+  :root {
+    --blue: #1B3A6B; --red: #B23A2E; --gold: #D9A441;
+    --cream: #F7F4EC; --ink: #232220; --ink-soft: #5A5850;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--cream); color: var(--ink); line-height: 1.65; user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; }
+  h1, h2, h3 { font-family: Georgia, 'Times New Roman', serif; color: var(--blue); font-weight: 500; }
+  a { color: var(--blue); text-decoration: underline; }
+  nav a { text-decoration: none; }
+
+  .ribbon { height: 6px; display: flex; }
+  .ribbon div { flex: 1; }
+  .ribbon .b1 { background: var(--blue); } .ribbon .b2 { background: var(--gold); } .ribbon .b3 { background: var(--red); }
+
+  nav { background: var(--blue); padding: 14px 40px; display: flex; flex-wrap: wrap; gap: 24px; }
+  nav a { color: var(--cream); font-size: 14px; opacity: 0.9; }
+  nav a:hover { opacity: 1; text-decoration: underline; }
+
+  .content-wrap { max-width: 800px; margin: 0 auto; padding: 50px 40px 70px; }
+  .eyebrow { color: var(--red); font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; margin-bottom: 10px; }
+  h1.page-title { font-size: 32px; margin-bottom: 10px; }
+  p.lead { font-size: 15.5px; color: var(--ink-soft); margin-bottom: 20px; }
+  h2.section-title { font-size: 21px; margin-top: 38px; margin-bottom: 12px; border-bottom: 2px solid var(--gold); padding-bottom: 6px; }
+  h3.sub-title { font-size: 16.5px; margin-top: 20px; margin-bottom: 8px; color: var(--red); }
+  p { margin-bottom: 14px; font-size: 15.5px; }
+  ul, ol { margin: 0 0 14px 20px; font-size: 15px; }
+  li { margin-bottom: 6px; }
+
+  .note-box { background: white; border-left: 4px solid var(--red); padding: 14px 18px; margin: 18px 0; font-size: 14.5px; border-radius: 4px; }
+  .step-box { background: white; border: 1px solid #e7e2d3; border-radius: 8px; padding: 18px 20px; margin: 14px 0; }
+  .deadline-tag {
+    display: inline-block; background: var(--red); color: white; font-size: 12.5px;
+    font-weight: 700; padding: 4px 12px; border-radius: 20px; margin-bottom: 10px;
+  }
+
+  .provider-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 14px 0 20px; }
+  .provider-card { background: white; border: 1px solid #e7e2d3; border-radius: 8px; padding: 16px 18px; }
+  .provider-card h3 { font-size: 16px; margin-bottom: 6px; color: var(--blue); }
+  .provider-card ul { margin: 6px 0 0 16px; font-size: 13.5px; }
+
+  .vocab-list { margin: 10px 0 20px; font-size: 14.5px; }
+  .vocab-list li { list-style: none; margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid #e7e2d3; }
+  .vocab-list .term { font-weight: 700; color: var(--blue); }
+
+  footer { background: var(--blue); color: var(--cream); text-align: center; padding: 24px 20px; font-size: 12.5px; opacity: 0.9; }
+
+  @media (max-width: 600px) {
+    nav { padding: 12px 20px; gap: 14px; }
+    .content-wrap { padding: 30px 20px 50px; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="ribbon"><div class="b1"></div><div class="b2"></div><div class="b3"></div></div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="eligibility.html">Eligibility</a>
+    <a href="application.html">Application</a>
+    <a href="documents.html">Documents</a>
+    <a href="interview.html">Interview Prep</a>
+    <a href="life-in-france.html">Life in France</a>
+    <a href="glossary.html">Glossary</a>
+    <a href="faq.html">FAQs</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="content-wrap">
+    <p class="eyebrow">Post-Arrival</p>
+    <h1 class="page-title">Life in France</h1>
+    <p class="lead">Tasks to complete once you've arrived, and practical info that will help you settle in.</p>
+
+    <h2 class="section-title">Visa Validation</h2>
+    <p>You must validate your visa online within your <b>first 3 months</b> in France. If you miss this window,
+      your visa becomes invalid and it becomes illegal for you to stay and work in France. You are also not
+      supposed to travel outside the Schengen Zone before validating your visa.</p>
+
+    <div class="note-box">
+      If you hold a <i>travailleur temporaire</i> visa (most assistants do), your visa validation code is
+      <b>R431-16 8</b>. Double-check this against your own documents, as codes can be updated.
+    </div>
+
+    <div class="step-box">
+      <ul>
+        <li>Validate your visa here: <a href="https://administration-etrangers-en-france.interieur.gouv.fr/particuliers/#/" target="_blank">administration-etrangers-en-france.interieur.gouv.fr</a></li>
+        <li>If the "timbre &eacute;lectronique" payment link doesn't work, use this alternative: <a href="https://www.service-public.fr/particuliers/vosdroits/F33071" target="_blank">service-public.fr</a></li>
+        <li>Validation codes reference (updated 2022): <a href="https://administration-etrangers-en-france.interieur.gouv.fr/particuliers/#/faq/ou-trouver-mon-numero-de-vlsts" target="_blank">interieur.gouv.fr FAQ</a></li>
+        <li>Issues with validation? Contact <a href="mailto:dgef-support@interieur.gouv.fr">dgef-support@interieur.gouv.fr</a> or call 0 806 001 62</li>
+      </ul>
+    </div>
+
+    <h2 class="section-title">Phone &amp; Internet (eSIM)</h2>
+    <p>An eSIM is a digital SIM card that lets you activate a phone plan without a physical SIM. If your phone
+      supports it, you can install a French plan while keeping your original number active on the same device
+      &mdash; useful for apps like WhatsApp, banking, or two-factor authentication, while using a French number for
+      calls, texts, and data.</p>
+
+    <h3 class="sub-title">Benefits</h3>
+    <ul>
+      <li>Set it up before leaving, so your phone works immediately on arrival</li>
+      <li>Flexible start dates, so you don't waste paid days while still abroad</li>
+      <li>Keep both your home and French numbers active at once, no need for two phones</li>
+      <li>Everything is managed online &mdash; no need to visit a store right away</li>
+    </ul>
+
+    <div class="provider-grid">
+      <div class="provider-card">
+        <h3>Free Mobile</h3>
+        <ul>
+          <li>Generally the most affordable option</li>
+          <li>Popular plan around &euro;9.99/month for unlimited calls/texts in France plus data</li>
+          <li>Sign up and activate online via eSIM</li>
+          <li>No French bank account required &mdash; pay by cash or a foreign debit/credit card</li>
+        </ul>
+      </div>
+      <div class="provider-card">
+        <h3>Orange</h3>
+        <ul>
+          <li>More expensive, but reliable coverage, especially outside cities</li>
+          <li>Flexible prepaid and monthly eSIM options</li>
+          <li>Good choice for stronger rural coverage or English-language support</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="note-box">
+      Check that your phone supports eSIMs before ordering (most newer iPhones and Androids do). If you want to
+      keep your home number active, disable roaming data on that line and use your French eSIM for data instead.
+      Consider starting with a month-to-month plan until you know your needs.
+    </div>
+
+    <h2 class="section-title">Transport &amp; Travel</h2>
+
+    <h3 class="sub-title">The Airport</h3>
+    <p>Flying into Paris, you'll most likely land at Orly (ORY) or Charles de Gaulle (CDG); the other option is
+      Beauvais (BVA), which is over an hour's bus ride from Paris.</p>
+    <ul>
+      <li><b>Orly:</b> the OrlyVal train (around &euro;12) connects to the RER B; the Orlybus is similarly priced. Metro
+        line 14 also now runs to Orly (around &euro;10), and Orly is included in the Navigo subscription if you've
+        added Zone 5. Tickets for OrlyVal/Orlybus are bought at the airport or Antony station.</li>
+      <li><b>CDG:</b> included with Navigo, or around &euro;12 for a single ticket via RER B. Leave plenty of time, as
+        delays are common. The RoissyBus is a useful alternative if the RER B is under maintenance. Most
+        international flights currently depart from Terminal 2.</li>
+      <li><b>Beauvais (BVA):</b> requires a bus (around &euro;17, over an hour). It's suited to budget flights, not
+        practical for arriving with all your luggage for a long stay.</li>
+      <li>On arrival, booking a taxi or rideshare (typically around &euro;50 from CDG or Orly) is often worth it,
+        especially with more than one suitcase.</li>
+    </ul>
+    <div class="note-box">
+      <b>Safety:</b> only use official, marked taxis or verified rideshare bookings. If using a rideshare app,
+      confirm the license plate matches what's shown, and ask the driver to confirm your name before getting in.
+      Don't accept rides from anyone approaching you at the arrival gates &mdash; go to the official taxi stand instead.
+    </div>
+
+    <h3 class="sub-title">Trains</h3>
+    <ul>
+      <li><b>Carte Jeune</b> (ages 17&ndash;26): bought via the SNCF website, no French bank account required.
+        Discounts on TER trains and the Eurostar to London &mdash; typically pays for itself quickly.</li>
+      <li><b>Carte Adulte</b> (26+): similar to Carte Jeune with slightly smaller discounts, still usually worth it
+        if you travel more than a few times.</li>
+      <li><b>TGV Max</b> (around &euro;80/month): unlimited TGV trains, but requires a French bank account.</li>
+      <li>Regional discount cards may also exist for your specific area (for example, a Hauts-de-France under-26
+        card) &mdash; worth checking what's available locally, as they can pay for themselves after one use.</li>
+      <li>Watch for occasional seasonal discount promotions on the Oui SNCF site.</li>
+    </ul>
+    <div class="note-box">
+      Your school will typically reimburse 50% of your monthly travel costs &mdash; keep all paper receipts and ask
+      your secretary for the reimbursement form. Submit it early in the month so it can be processed with your
+      next paycheck. This can usually apply to both a Navigo and a separate regional subscription, not just one.
+    </div>
+
+    <h3 class="sub-title">Strikes (Gr&egrave;ves)</h3>
+    <p>Strikes are common in France. Major strikes are usually announced ahead of time on the SNCF website, though
+      sometimes with only a day's notice.</p>
+    <ul>
+      <li>In Paris, Metro lines 1, 4, and 14 usually keep running during strikes, as they're automated</li>
+      <li>Your school will still pay you if you can't make it to work due to a strike &mdash; photo proof of
+        cancellations is rarely required, but can't hurt to have</li>
+      <li>Buses often replace metro routes during strikes, but buses can also be affected</li>
+      <li>If travelling, check for planned strikes affecting airport transport (RER B, Air France, etc.)</li>
+    </ul>
+
+    <h3 class="sub-title">Paris: The Navigo Pass</h3>
+    <p>The Navigo functions like a rechargeable transit card for the Paris Metro and RER, available as daily,
+      weekly, or monthly passes. The weekly pass runs Monday&ndash;Sunday, not 7 days from purchase, so it's best
+      to buy a new monthly pass just before the 1st of the month to avoid queues. A photo is required on your card.</p>
+    <ul>
+      <li><b>Navigo D&eacute;couverte:</b> available to anyone, obtainable at metro ticket booths</li>
+      <li><b>Resident Navigo:</b> requires proof of housing in Ile de France; replacing a lost card doesn't require
+        paying the setup fee again</li>
+      <li><b>Navigo Easy:</b> a plastic top-up card that replaced paper booklets; doesn't require a photo</li>
+      <li>Getting to the airport with a regular ticket instead of an all-zones Navigo can result in a &euro;60 fine
+        &mdash; make sure your pass covers the right zones first</li>
+    </ul>
+    <div class="note-box">
+      If you live in Paris but commute to a school outside the city, ask about the "pass pass" &mdash; a &euro;5
+      card that lets you add a monthly regional subscription (abonnement mensuel) covering your specific commute,
+      often working out far cheaper than paying per trip. Ask at your local station, or a larger nearby one, if
+      yours doesn't offer it.
+    </div>
+
+    <h3 class="sub-title">Train &amp; Transit Vocabulary</h3>
+    <ul class="vocab-list">
+      <li><span class="term">SNCF</span> &mdash; Syst&egrave;me National de Chemins de Fer, the French national rail network</li>
+      <li><span class="term">TGV</span> &mdash; Train &agrave; Grande Vitesse, high-speed trains</li>
+      <li><span class="term">Intercit&eacute;s</span> &mdash; non-high-speed trains that mostly stop in bigger cities</li>
+      <li><span class="term">TER</span> &mdash; Train Express R&eacute;gional, regional trains</li>
+      <li><span class="term">Carte Avantage Jeune</span> &mdash; youth discount card for SNCF trains</li>
+      <li><span class="term">M&eacute;tro</span> &mdash; the subway</li>
+      <li><span class="term">RER</span> &mdash; R&eacute;seau Express R&eacute;gional, regional rail crossing Paris and out to the suburbs</li>
+      <li><span class="term">Transilien</span> &mdash; regional rail that terminates at major stations</li>
+      <li><span class="term">Navigo</span> &mdash; the payment card used for M&eacute;tro and RER</li>
+      <li><span class="term">RATP</span> &mdash; R&eacute;gie Autonome des Transports Parisiens, the Paris transit authority</li>
+    </ul>
+    <p>Buy Paris bus tickets online here: <a href="https://www.ratp.fr/le-titre-a-bord-sms" target="_blank">ratp.fr</a></p>
+  </div>
+
+  <footer>&copy; 2026 Assistant Uganda. All rights reserved. Please do not reproduce or modify this content without permission.</footer>
+
+  <script>
+    document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+    document.addEventListener('copy', function(e) { e.preventDefault(); });
+  </script>
+
+</body>
+</html>
