@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Life in France | Assistants Uganda</title>
+<title>Life in France | Assistant Uganda</title>
 <style>
   :root {
     --blue: #1B3A6B; --red: #B23A2E; --gold: #D9A441;
@@ -48,6 +48,16 @@
   .vocab-list { margin: 10px 0 20px; font-size: 14.5px; }
   .vocab-list li { list-style: none; margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid #e7e2d3; }
   .vocab-list .term { font-weight: 700; color: var(--blue); }
+
+  .region-list { margin: 10px 0 20px; }
+  .region-item { background: white; border: 1px solid #e7e2d3; border-radius: 8px; padding: 14px 18px; margin-bottom: 10px; }
+  .region-item .rname { font-weight: 700; color: var(--blue); font-size: 15px; display: block; margin-bottom: 4px; }
+  .region-item p { font-size: 14px; margin-bottom: 4px; }
+
+  .option-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin: 14px 0 20px; }
+  .option-card { background: white; border: 1px solid #e7e2d3; border-radius: 8px; padding: 14px 16px; }
+  .option-card h3 { font-size: 15px; margin-bottom: 5px; color: var(--red); }
+  .option-card p { font-size: 13.5px; margin-bottom: 0; }
 
   footer { background: var(--blue); color: var(--cream); text-align: center; padding: 24px 20px; font-size: 12.5px; opacity: 0.9; }
 
@@ -222,9 +232,95 @@
       <li><span class="term">RATP</span> &mdash; R&eacute;gie Autonome des Transports Parisiens, the Paris transit authority</li>
     </ul>
     <p>Buy Paris bus tickets online here: <a href="https://www.ratp.fr/le-titre-a-bord-sms" target="_blank">ratp.fr</a></p>
+
+    <h3 class="sub-title">Transport Reimbursement</h3>
+    <p>Your school refunds 50% of transport <b>subscriptions</b> for your commute &mdash; keep your receipts and
+      fill out the reimbursement form. Individual single-use tickets are <b>not</b> reimbursed, only subscriptions.
+      Reference: <a href="https://www.service-public.fr/particuliers/actualites/A16734" target="_blank">service-public.fr</a>.</p>
+
+    <div class="note-box">
+      <b>Navigo reimbursement tip:</b> there's a difference between a <i>tourist</i> Navigo and a <i>personal</i>
+      Navigo. Anything bought on the app or at a ticket counter without providing ID counts as tourist, not
+      personal. If your school secretary accepts printed or emailed tourist receipts, that's fine. If they don't,
+      you'll need a personal Navigo instead, which lets you download a formal attestation with your name and
+      address on it. You can get one either in person at a registration point (bring your ID and proof of address),
+      or online via the IDF Mobilit&eacute; website under "mon espace" &rarr; "mon navigo" &rarr; "souscrire un
+      nouveau titre", where you only need to state your address rather than prove it.
+    </div>
+
+    <h3 class="sub-title">Other Transport Options</h3>
+    <div class="option-grid">
+      <div class="option-card">
+        <h3>BlaBlaCar</h3>
+        <p>A carpooling platform &mdash; people driving somewhere already offer seats along their route. Often
+          very cost-effective for longer trips; also runs its own affordable long-distance buses.</p>
+      </div>
+      <div class="option-card">
+        <h3>G7 Taxi</h3>
+        <p>An official Paris taxi service that can use taxi and bus lanes, which can be faster than a rideshare
+          during busy times.</p>
+      </div>
+      <div class="option-card">
+        <h3>Flixbus</h3>
+        <p>Affordable long-distance buses across Europe &mdash; a budget-friendly way to reach other countries or
+          cities if you don't mind a longer journey.</p>
+      </div>
+    </div>
+
+    <h3 class="sub-title">Regional Transport Notes</h3>
+    <p>Local transport varies a lot by region. A few examples shared by assistants in different academies, to give
+      you a sense of what to expect &mdash; always confirm the current details for your own city:</p>
+    <div class="region-list">
+      <div class="region-item"><span class="rname">Ch&acirc;teau-Thierry (Aisne)</span><p>Local Fablio bus network; a separate reservation-only Fablio service covers trips outside town. Paris is reachable directly with a Navigo via the TER Ligne P.</p></div>
+      <div class="region-item"><span class="rname">Bourgogne-Franche-Comt&eacute;</span><p>Several small towns are served by the Mobigo bus network &mdash; details at viamobigo.fr.</p></div>
+      <div class="region-item"><span class="rname">Occitanie (Montpellier &amp; Toulouse academies)</span><p>A youth discount programme called "+=0" gives under-26s free TER trips for the rest of the month after 5 paid rides.</p></div>
+      <div class="region-item"><span class="rname">Blois</span><p>Local Azalys buses (lettered lines) and regional Remi buses (numbered lines). A discounted "abonnement solidaire" is available via your CAF Quotient Familial.</p></div>
+      <div class="region-item"><span class="rname">Ille-et-Vilaine (Bretagne)</span><p>Regional network via BreizhGo &mdash; useful for inter-town travel, though it doesn't always appear on Google Maps.</p></div>
+      <div class="region-item"><span class="rname">Bordeaux</span><p>Tram network connects the airport and train station (may require a transfer) &mdash; check the current line map, as routes are periodically updated.</p></div>
+      <div class="region-item"><span class="rname">Toulouse</span><p>The Pastel card covers most local transport and also includes a discounted annual bike-share membership.</p></div>
+      <div class="region-item"><span class="rname">Nancy</span><p>Free weekend buses; an affordable regional TER discount card called Carte Fluo for under-26s. Flying via Luxembourg can be cheaper and simpler than via Paris.</p></div>
+      <div class="region-item"><span class="rname">Noyon &amp; Compi&egrave;gne (Amiens academy)</span><p>Free local bus systems, though schedules can run early or late in smaller towns like Noyon.</p></div>
+      <div class="region-item"><span class="rname">Tours</span><p>Local transit card called JV Malin; under-26s can get a free Remi pass attestation via yeps.fr.</p></div>
+    </div>
+
+    <h2 class="section-title">Travelling</h2>
+    <p>You must validate your visa and pay the associated fee before travelling outside the EU/Schengen area
+      &mdash; see the Visa Validation section above. Some useful planning tools:</p>
+    <ul>
+      <li>Multi-modal trip comparison (flights, buses, trains): Omio</li>
+      <li>Flight comparison: Skyscanner or Google Flights &mdash; always book directly through the airline once
+        you've found the best option, rather than through a third-party reseller, so you're better protected if
+        there's a cancellation or issue</li>
+      <li>Hostel comparison: Hostelworld &mdash; again, book directly with the hostel where possible</li>
+    </ul>
+
+    <h2 class="section-title">Vacances (School Holidays)</h2>
+    <p>Assistants get several holiday periods across the year, typically around October, December, February, and
+      April &mdash; but the exact dates vary by academy, so be careful when planning trips with friends posted
+      elsewhere.</p>
+    <div class="note-box">
+      Taking time off <b>outside</b> the standard vacances (for emergencies or other reasons) isn't guaranteed to
+      be approved, and schools aren't required to grant it except for genuine emergencies. An unapproved absence
+      can be treated as abandoning your post, risking your contract and visa. If approved, you'll sign a form with
+      your head of establishment confirming the dates, and agree on whether/how you'll make up the hours.
+    </div>
+    <p>Official vacation calendar: <a href="https://www.service-public.fr/particuliers/vosdroits/F31952?lang=en" target="_blank">service-public.fr</a></p>
+
+    <h2 class="section-title">ETIAS &amp; Entry Requirements</h2>
+    <p>ETIAS (a new EU travel authorisation for visa-exempt travellers) has been delayed multiple times. As of
+      mid-2026, it is <b>still not in effect</b> &mdash; the EU had targeted late 2026 but recently removed that
+      date from its official pages, with a 2027 launch now considered more likely. The separate Entry/Exit System
+      (EES), which records biometric data at the border, has been live since April 2026.</p>
+    <div class="note-box">
+      As a language assistant, you'll already hold a visa, so ETIAS won't apply to you during your contract. It
+      would only become relevant if you wanted to stay in the Schengen Zone after your contract ends (as a
+      visa-exempt tourist), and only if your nationality qualifies for that 90-day visa waiver in the first place.
+      Since this is a fast-moving area, check <a href="https://travel-europe.europa.eu/etias_en" target="_blank">the official ETIAS site</a>
+      for the current status before relying on any date you read elsewhere, including here.
+    </div>
   </div>
 
-  <footer>&copy; 2026 Assistant de langue Uganda. Gerard de Paris.</footer>
+  <footer>&copy; 2026 Assistant de LangueUganda. Gerard de Paris.</footer>
 
   <script>
     document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
