@@ -3,15 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Required Documents | Assistants Uganda</title>
+<title>Required Documents | Assistant Uganda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Source+Serif+4:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
   :root {
     --blue: #1B3A6B; --red: #B23A2E; --gold: #D9A441;
     --cream: #F7F4EC; --ink: #232220; --ink-soft: #5A5850;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--cream); color: var(--ink); line-height: 1.65; }
-  h1, h2, h3 { font-family: Georgia, 'Times New Roman', serif; color: var(--blue); font-weight: 500; }
+  body { font-family: 'Source Serif 4', Georgia, serif; background: var(--cream); color: var(--ink); line-height: 1.65; animation: fadeIn 0.5s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+  h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; color: var(--blue); font-weight: 600; letter-spacing: -0.3px; }
   a { color: var(--blue); text-decoration: underline; }
   nav a { text-decoration: none; }
 
@@ -19,12 +24,12 @@
   .ribbon div { flex: 1; }
   .ribbon .b1 { background: var(--blue); } .ribbon .b2 { background: var(--gold); } .ribbon .b3 { background: var(--red); }
 
-  nav { background: var(--blue); padding: 14px 40px; display: flex; flex-wrap: wrap; gap: 24px; }
-  nav a { color: var(--cream); font-size: 14px; opacity: 0.9; }
+  nav { background: var(--blue); padding: 14px 40px; display: flex; flex-wrap: wrap; gap: 24px; font-family: 'Inter', sans-serif; }
+  nav a { color: var(--cream); font-size: 13.5px; opacity: 0.85; letter-spacing: 0.2px; transition: opacity 0.15s ease; }
   nav a:hover { opacity: 1; text-decoration: underline; }
 
   .content-wrap { max-width: 800px; margin: 0 auto; padding: 50px 40px 70px; }
-  .eyebrow { color: var(--red); font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; margin-bottom: 10px; }
+  .eyebrow { color: var(--red); font-size: 12.5px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 10px; font-family: 'Inter', sans-serif; }
   h1.page-title { font-size: 32px; margin-bottom: 10px; }
   p.lead { font-size: 15.5px; color: var(--ink-soft); margin-bottom: 20px; }
   h2.section-title { font-size: 21px; margin-top: 38px; margin-bottom: 12px; border-bottom: 2px solid var(--gold); padding-bottom: 6px; }
@@ -123,6 +128,7 @@
       available. As of 2024, you must usually upload your birth certificate and background check in Section 6
       before receiving your arr&ecirc;te (ADN). Some rectorats send the ADN before these documents are uploaded &mdash;
       if that happens, email the documents directly to your Rectorat.
+      <br><br><i>This deadline can shift slightly year to year &mdash; confirm the current date with Campus France Uganda or FEI rather than relying only on this page.</i>
     </div>
 
     <p>Some academies may email you requesting a scanned copy &mdash; this is normal, just send it by email
@@ -135,11 +141,12 @@
       <ol>
         <li>Register on the Uganda Police Certificate Services Portal: <a href="https://service.upf.go.ug" target="_blank">service.upf.go.ug</a></li>
         <li>Complete the online application with your personal details</li>
-        <li>Pay the application fee &mdash; currently UGX 76,000, plus applicable bank or mobile money charges</li>
+        <li>Pay the application fee &mdash; currently UGX 76,000, plus applicable bank or mobile money charges
+          <i>(confirm the current fee on the portal, as it can change)</i></li>
         <li>Book an appointment for fingerprint capture at your selected Uganda Police INTERPOL office</li>
         <li>Attend your appointment with: your original National ID or passport, two passport-size photographs,
           your printed application form, and proof of payment</li>
-        <li>After processing (typically about 5-10 working days), collect your Certificate of Good Conduct &mdash;
+        <li>After processing (typically about 5 working days), collect your Certificate of Good Conduct &mdash;
           generally valid for 6 months</li>
       </ol>
     </div>
@@ -163,7 +170,7 @@
       <li>Wait for the ADELE email (renewals already have an ADELE account)</li>
       <li>Renewals: check with your academy whether they'll accept your background check from last year</li>
       <li>For fingerprints taken in France, you can contact <a href="mailto:fingerprintsparis@gmail.com">fingerprintsparis@gmail.com</a></li>
-      <li>New applicants: apply for a federal identity history summary, submit your fingerprints, and upload by <b>June 30</b></li>
+      <li>New applicants: apply for a federal identity history summary, submit your fingerprints, and upload by <b>June 30</b> <i>(confirm this exact date each cycle, as it can shift)</i></li>
       <li>Locate your birth certificate &mdash; a French translation isn't required as long as it's originally in English</li>
     </ul>
 
@@ -273,7 +280,7 @@
     </ul>
   </div>
 
-  <footer>&copy; 2026 Assistant de langue Uganda. Gerard de Paris.</footer>
+  <footer>&copy; Assistant de Langue Uganda. G&eacute;rard de Paris.</footer>
 
 </body>
 </html>
