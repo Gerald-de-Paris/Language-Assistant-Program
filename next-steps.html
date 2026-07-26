@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Renewal &amp; Next Steps | Assistant Uganda</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Source+Serif+4:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --blue: #1B3A6B; --red: #B23A2E; --gold: #D9A441;
+    --cream: #F7F4EC; --ink: #232220; --ink-soft: #5A5850;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    background: var(--cream); color: var(--ink); line-height: 1.65;
+    animation: fadeIn 0.5s ease;
+    user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none;
+  }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+  h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; color: var(--blue); font-weight: 600; letter-spacing: -0.3px; }
+  a { color: var(--blue); text-decoration: underline; }
+  nav a { text-decoration: none; }
+
+  .ribbon { height: 6px; display: flex; }
+  .ribbon div { flex: 1; }
+  .ribbon .b1 { background: var(--blue); } .ribbon .b2 { background: var(--gold); } .ribbon .b3 { background: var(--red); }
+
+  nav { background: var(--blue); padding: 14px 40px; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; font-family: 'Inter', sans-serif; }
+  nav a { color: var(--cream); font-size: 13.5px; opacity: 0.85; letter-spacing: 0.2px; transition: opacity 0.15s ease; }
+  nav a:hover { opacity: 1; text-decoration: underline; }
+
+  .content-wrap { max-width: 800px; margin: 0 auto; padding: 50px 40px 70px; }
+  .eyebrow { color: var(--red); font-size: 12.5px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 10px; font-family: 'Inter', sans-serif; }
+  h1.page-title { font-size: 32px; margin-bottom: 10px; }
+  p.lead { font-size: 15.5px; color: var(--ink-soft); margin-bottom: 20px; }
+  h2.section-title { font-size: 21px; margin-top: 38px; margin-bottom: 12px; border-bottom: 2px solid var(--gold); padding-bottom: 6px; }
+  h3.sub-title { font-size: 16.5px; margin-top: 20px; margin-bottom: 8px; color: var(--red); }
+  p { margin-bottom: 14px; font-size: 15.5px; }
+  ul, ol { margin: 0 0 14px 20px; font-size: 15px; }
+  li { margin-bottom: 6px; }
+
+  .note-box { background: white; border-left: 4px solid var(--red); padding: 14px 18px; margin: 18px 0; font-size: 14.5px; border-radius: 4px; }
+  .warn-box { background: #FBEDEA; border: 1px solid var(--red); padding: 14px 18px; margin: 18px 0; font-size: 14px; border-radius: 6px; }
+  .step-box { background: white; border: 1px solid #e7e2d3; border-radius: 8px; padding: 18px 20px; margin: 14px 0; }
+  .support-box {
+    background: var(--blue); color: var(--cream); padding: 18px 22px; margin: 18px 0; border-radius: 8px; font-size: 14.5px;
+  }
+  .support-box a { color: var(--gold); }
+
+  .check-list { margin: 10px 0 20px; }
+  .check-list li {
+    list-style: none; background: white; border: 1px solid #e7e2d3; border-radius: 6px;
+    padding: 10px 14px 10px 36px; margin-bottom: 8px; font-size: 14.5px; position: relative;
+  }
+  .check-list li::before { content: "☐"; position: absolute; left: 12px; color: var(--gold); font-size: 15px; }
+
+  footer { background: var(--blue); color: var(--cream); text-align: center; padding: 24px 20px; font-size: 12.5px; opacity: 0.9; }
+
+  .lang-toggle-btn {
+    background: transparent; border: 1.5px solid var(--cream); color: var(--cream);
+    padding: 5px 14px; border-radius: 20px; font-size: 12.5px; font-weight: 600; cursor: pointer; margin-left: auto;
+    font-family: 'Inter', sans-serif; transition: background 0.15s ease;
+  }
+  .lang-toggle-btn:hover { background: rgba(255,255,255,0.15); }
+  body.lang-fr .lang-en { display: none; }
+  body:not(.lang-fr) .lang-fr { display: none; }
+
+  @media (max-width: 600px) {
+    nav { padding: 12px 20px; gap: 14px; }
+    .content-wrap { padding: 30px 20px 50px; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="ribbon"><div class="b1"></div><div class="b2"></div><div class="b3"></div></div>
+
+  <nav>
+    <a href="index.html"><span class="lang-en">Home</span><span class="lang-fr">Accueil</span></a>
+    <a href="about.html"><span class="lang-en">About</span><span class="lang-fr">À propos</span></a>
+    <a href="eligibility.html"><span class="lang-en">Eligibility</span><span class="lang-fr">Éligibilité</span></a>
+    <a href="application.html"><span class="lang-en">Application</span><span class="lang-fr">Candidature</span></a>
+    <a href="documents.html"><span class="lang-en">Documents</span><span class="lang-fr">Documents</span></a>
+    <a href="life-in-france.html"><span class="lang-en">Life in France</span><span class="lang-fr">Vivre en France</span></a>
+    <a href="housing.html"><span class="lang-en">Housing</span><span class="lang-fr">Logement</span></a>
+    <a href="medical.html"><span class="lang-en">Medical</span><span class="lang-fr">Sant&eacute;</span></a>
+    <a href="money.html"><span class="lang-en">Money &amp; Taxes</span><span class="lang-fr">Argent et Imp&ocirc;ts</span></a>
+    <a href="culture.html"><span class="lang-en">Culture &amp; Community</span><span class="lang-fr">Culture et Communaut&eacute;</span></a>
+    <a href="next-steps.html"><span class="lang-en">Renewal &amp; Next Steps</span><span class="lang-fr">Renouvellement</span></a>
+    <a href="glossary.html"><span class="lang-en">Glossary</span><span class="lang-fr">Glossaire</span></a>
+    <button class="lang-toggle-btn" id="langBtn" onclick="toggleLang()">Fran&ccedil;ais</button>
+  </nav>
+
+  <div class="content-wrap">
+    <p class="eyebrow">Looking Ahead</p>
+    <h1 class="page-title">Renewal, Leaving &amp; What Comes Next</h1>
+    <p class="lead">This program has good times and hard times, like any job. Whatever you decide is right for
+      you, here's what each path actually involves.</p>
+
+    <h2 class="section-title">Leaving the Program Early</h2>
+    <p>Quitting is a serious decision, and only you know what's genuinely best for your situation &mdash; there's
+      no judgment in choosing to leave if that's the right call for you.</p>
+    <div class="step-box">
+      <ul style="margin-bottom:0;">
+        <li>Start by contacting your Professeur R&eacute;f&eacute;rent, who can guide you on next steps</li>
+        <li>You'll likely also need to contact FEI (<a href="mailto:assistant@france-education-international.fr">assistant@france-education-international.fr</a>)
+          and your academy/rectorat &mdash; how much of this falls to you versus your secretary varies by situation</li>
+        <li>Write a resignation letter stating your exact last working day. Where possible, give notice so your
+          academy has a chance to find a replacement</li>
+        <li>You'll also need to formally quit through the button on your ADELE account, in addition to the steps above</li>
+      </ul>
+    </div>
+    <div class="warn-box">
+      Your visa is directly tied to your job. Quitting means forfeiting your right to stay in France under that
+      visa &mdash; trying to remain in the country afterward without authorization can lead to real immigration
+      consequences and isn't recommended.
+    </div>
+
+    <h2 class="section-title">Second Jobs</h2>
+    <p>Assistants on a Travailleur Temporaire visa are <b>not permitted to hold any other job</b> alongside the
+      assistantship &mdash; including informal or "under the table" work. This is a hard legal limit tied to the
+      visa itself, not just a guideline. The main exceptions are EU citizens, or those separately holding a
+      student visa.</p>
+    <p style="font-size:13px; color:var(--ink-soft);">Based on France's Code du travail (Article L1221-1), Code de la s&eacute;curit&eacute;
+      sociale (Article L243-1-2), CESEDA (Articles L5221-5 and L5221-8), and the Circulaire du 18-8-2023 specific
+      to language assistants, which states non-EU assistants cannot hold another activity, while EU-national
+      assistants may request permission for additional work through their hierarchy.</p>
+
+    <h2 class="section-title">Renewing Your Contract</h2>
+    <p>The renewal process changes somewhat each year, so it's worth checking in with current assistants (via
+      community social media groups) closer to the time for the latest specifics. A couple of general points:</p>
+    <ul>
+      <li>Make sure you've listed at least a B2 level in French on your renewal application</li>
+      <li>Renewing typically involves a new motivation letter explaining your first year's experience, along with
+        an evaluation from your school, submitted by your school to FEI ahead of a March-ish deadline (confirm
+        current timing each year)</li>
+      <li>If you're staying in the same region, buying a round-trip ticket for your break between contracts (if
+        you plan to return) can work out cheaper than two one-way tickets</li>
+    </ul>
+    <p>Renewal contacts: <a href="mailto:renouvellement@france-education-international.fr">renouvellement@france-education-international.fr</a>,
+      01 45 07 60 00. Renewal tutorials and current links are published each year on the
+      <a href="https://www.france-education-international.fr/venir-en-france/devenir-assistant-de-langue-en-france/votre-candidature" target="_blank">FEI website</a> &mdash;
+      search there directly for the current year's version rather than relying on an old link.</p>
+
+    <h2 class="section-title">End of Program</h2>
+    <p>If you're American, British, or from another nationality without EU/Schengen residency rights, it's widely
+      understood that to stay in Europe afterward on a 90-day tourist basis, you need to <b>leave the Schengen
+      Zone</b> (not the same as the EU &mdash; the UK and Ireland are common options) and re-enter to start that
+      90-day window fresh. Requirements vary by nationality, so confirm with your embassy or consulate. See our
+      <a href="life-in-france.html">Life in France page</a> for the current status of ETIAS, which will eventually
+      apply to this process once it launches.</p>
+    <div class="warn-box">
+      Overstaying a visa is not recommended under any circumstances &mdash; it can result in fines, being barred
+      from the EU, and can make you ineligible for future naturalization even in a different EU country.
+    </div>
+    <p>Your school can sign an official "attestation de services" confirming you completed your contract &mdash;
+      mostly useful for your own records: <a href="https://www.france-education-international.fr/document/attestation-de-services-alve" target="_blank">form here</a></p>
+
+    <h3 class="sub-title">End-of-Program Checklist</h3>
+    <ul class="check-list">
+      <li>Sign the final completion document with your school</li>
+      <li>Give your bank advance notice of closing your account &mdash; but don't close it before the end of
+        summer, or you may not receive your prime (see Money &amp; Taxes)</li>
+      <li>Cancel subscriptions (phone plan, internet, etc.)</li>
+      <li>Update your address with CAF (see Life in France)</li>
+      <li>Send your landlord/agency proper written notice (pr&eacute;avis) if ending a lease &mdash; see the
+        Housing page for the exact notice periods and a template tool</li>
+    </ul>
+
+    <h2 class="section-title">Life After Your Assistantship</h2>
+
+    <h3 class="sub-title">Master's Programs</h3>
+    <div class="warn-box">
+      Rules here are nationality-specific and change often &mdash; France's Monmaster system has shifted policy
+      several times in recent years. Confirm everything directly with Campus France or your target university
+      before relying on this.
+    </div>
+    <p>Broadly: if you're not yet living in France, you'd generally apply through Campus France (deadline
+      typically around December 31/January 1). If you're already living in France, trouvemonmaster is the usual
+      route (deadline typically around March) &mdash; you can often apply through both. Either way, there's
+      usually a Campus France fee (roughly &euro;200) to obtain documents needed for your student visa appointment.</p>
+    <p>An ENIC-NARIC attestation is often required for these applications &mdash; see the Life in France page for details.</p>
+
+    <h3 class="sub-title">Staying On As a Local Recruit</h3>
+    <p>If you already have the right to work in France independently (not on the assistant visa), you may be able
+      to apply as a "local recruit" &mdash; these positions fill posts left vacant by assistants who drop out
+      partway through the year, and do <b>not</b> sponsor a visa themselves. If interested, reach out to your
+      académie's language assistant coordinator directly (search "[your académie] contact assistants de langues"
+      to find the current contact, since staff and emails change).</p>
+
+    <h3 class="sub-title">Other Routes</h3>
+    <ul>
+      <li><b>Changing jobs/visas</b> while on your assistant contract, if you find other employment: <a href="https://www.demarches.interieur.gouv.fr/particuliers/etranger-france-carte-sejour-salarie-travailleur-temporaire" target="_blank">interieur.gouv.fr</a></li>
+      <li><b>French citizenship</b> pathways: <a href="https://www.service-public.fr/particuliers/vosdroits/F2213" target="_blank">service-public.fr</a></li>
+      <li><b>PACS to a French partner</b> is another route some assistants pursue &mdash; this has its own separate
+        process worth researching directly if relevant to your situation</li>
+    </ul>
+
+    <h3 class="sub-title">Job Search Resources (Paris-focused)</h3>
+    <ul>
+      <li>The American Chamber of Commerce in France is worth looking into for English-speaking professional networking</li>
+      <li>Shakespeare and Company's "Tumbleweeding" program &mdash; a well-known scheme letting people stay above
+        the famous Paris bookshop in exchange for a few hours' work a day: <a href="https://www.shakespeareandcompany.com/tumbleweeding" target="_blank">shakespeareandcompany.com</a></li>
+    </ul>
+    <p style="font-size:13px; color:var(--ink-soft);"><i>Job-search links and requirements shift often and can be nationality-specific (many require you already hold the right to work in France) &mdash; treat these as starting points for your own research, not guarantees.</i></p>
+  </div>
+
+  <footer>&copy; Assistant de Langue Uganda. G&eacute;rard de Paris.</footer>
+
+  <script>
+    document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+    document.addEventListener('copy', function(e) { e.preventDefault(); });
+  </script>
+  <script>
+    function applyLang(lang) {
+      document.body.classList.toggle('lang-fr', lang === 'fr');
+      document.getElementById('langBtn').textContent = lang === 'fr' ? 'English' : 'Fran\u00e7ais';
+      localStorage.setItem('siteLang', lang);
+    }
+    function toggleLang() {
+      const current = document.body.classList.contains('lang-fr') ? 'fr' : 'en';
+      applyLang(current === 'fr' ? 'en' : 'fr');
+    }
+    applyLang(localStorage.getItem('siteLang') || 'en');
+  </script>
+
+</body>
+</html>
