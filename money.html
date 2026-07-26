@@ -69,19 +69,19 @@
 <body>
 
   <div class="ribbon"><div class="b1"></div><div class="b2"></div><div class="b3"></div></div>
-
   <nav>
     <a href="index.html"><span class="lang-en">Home</span><span class="lang-fr">Accueil</span></a>
     <a href="about.html"><span class="lang-en">About</span><span class="lang-fr">À propos</span></a>
     <a href="eligibility.html"><span class="lang-en">Eligibility</span><span class="lang-fr">Éligibilité</span></a>
     <a href="application.html"><span class="lang-en">Application</span><span class="lang-fr">Candidature</span></a>
     <a href="documents.html"><span class="lang-en">Documents</span><span class="lang-fr">Documents</span></a>
-    <a href="interview.html"><span class="lang-en">Interview Prep</span><span class="lang-fr">Préparation Entretien</span></a>
     <a href="life-in-france.html"><span class="lang-en">Life in France</span><span class="lang-fr">Vivre en France</span></a>
+    <a href="housing.html"><span class="lang-en">Housing</span><span class="lang-fr">Logement</span></a>
+    <a href="medical.html"><span class="lang-en">Medical</span><span class="lang-fr">Santé</span></a>
     <a href="money.html"><span class="lang-en">Money &amp; Taxes</span><span class="lang-fr">Argent et Impôts</span></a>
+    <a href="culture.html"><span class="lang-en">Culture &amp; Community</span><span class="lang-fr">Culture et Communauté</span></a>
+    <a href="next-steps.html"><span class="lang-en">Renewal &amp; Next Steps</span><span class="lang-fr">Renouvellement</span></a>
     <a href="glossary.html"><span class="lang-en">Glossary</span><span class="lang-fr">Glossaire</span></a>
-    <a href="faq.html"><span class="lang-en">FAQs</span><span class="lang-fr">FAQ</span></a>
-    <a href="contact.html"><span class="lang-en">Contact</span><span class="lang-fr">Contact</span></a>
     <button class="lang-toggle-btn" id="langBtn" onclick="toggleLang()">Français</button>
   </nav>
 
@@ -320,7 +320,7 @@
       const current = document.body.classList.contains('lang-fr') ? 'fr' : 'en';
       applyLang(current === 'fr' ? 'en' : 'fr');
     }
-    applyLang(localStorage.getItem('siteLang') || 'en');
+    applyLang(localStorage.getItem('siteLang') || 'fr');
   </script>
 
 </body>
