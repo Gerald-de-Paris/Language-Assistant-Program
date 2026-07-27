@@ -152,40 +152,6 @@
     color: var(--blue) !important;
   }
 
-  /* ---------- THE STAMP (our signature design element) ---------- */
-  .stamp {
-    position: absolute;
-    top: 50px;
-    right: 40px;
-    width: 100px;
-    height: 100px;
-    border: 2px solid var(--red);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    transform: rotate(8deg);
-  }
-  .stamp span {
-    font-size: 11px;
-    color: var(--red);
-    font-weight: 600;
-    line-height: 1.4;
-    letter-spacing: 0.5px;
-  }
-
-  /* ---------- FRENCH TRANSLATION NOTE ---------- */
-  .translation-note {
-    font-size: 12px;
-    color: var(--ink-soft);
-    max-width: 600px;
-    font-style: italic;
-    margin-top: 20px;
-    border-top: 1px solid #ddd7c8;
-    padding-top: 16px;
-  }
-
   /* ---------- SECTION CARDS (links to the rest of the site) ---------- */
   .sections {
     max-width: 1100px;
@@ -229,7 +195,6 @@
 
   /* ---------- MOBILE ADJUSTMENTS ---------- */
   @media (max-width: 600px) {
-    .stamp { display: none; } /* hide stamp on small screens so it doesn't overlap text */
     .hero h1 { font-size: 28px; }
     nav { padding: 12px 20px; gap: 14px; }
     .hero, .sections { padding-left: 20px; padding-right: 20px; }
@@ -257,10 +222,37 @@
 
   body.lang-fr .lang-en { display: none; }
   body:not(.lang-fr) .lang-fr { display: none; }
+
+  /* ---------- SITE LOCK / "COMING SOON" OVERLAY ---------- */
+  body.site-locked > *:not(.site-lock-overlay) {
+    filter: blur(10px);
+    pointer-events: none;
+    user-select: none;
+  }
+  .site-lock-overlay {
+    position: fixed; inset: 0; z-index: 9999;
+    background: rgba(247,244,236,0.85);
+    display: flex; align-items: center; justify-content: center;
+    padding: 30px; text-align: center;
+  }
+  .site-lock-overlay .box {
+    max-width: 440px; background: white; border: 1px solid #e7e2d3; border-radius: 12px;
+    padding: 40px 32px; box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+  }
+  .site-lock-overlay h2 { margin-bottom: 10px; font-size: 22px; }
+  .site-lock-overlay p { color: var(--ink-soft); font-size: 14.5px; margin-bottom: 0; }
 </style>
 </head>
 
 <body>
+
+  <!-- ============================================================
+       SITE STATUS SWITCH
+       Change "false" to "true" below to temporarily hide this page
+       behind a "Coming Soon" message (e.g. while awaiting approval).
+       Change it back to "false" to make the page visible again.
+       ============================================================ -->
+  <script>const SITE_LOCKED = false;</script>
 
   <!-- Top tricolor + gold ribbon -->
   <div class="ribbon">
@@ -289,10 +281,6 @@
 
   <!-- Hero section: the welcome message -->
   <section class="hero">
-    <div class="stamp">
-      <span>GUIDE<br>OFFICIEL<br>2026</span>
-    </div>
-
     <p class="eyebrow">
       <span class="lang-en">Language Assistant Guide</span><span class="lang-fr">Guide des Assistant(e)s des Langues</span>
     </p>
@@ -312,13 +300,6 @@
       <a href="about.html" class="btn-primary"><span class="lang-en">Start Reading</span><span class="lang-fr">Commencer</span></a>
       <a href="eligibility.html" class="btn-secondary"><span class="lang-en">Eligibility &amp; Steps</span><span class="lang-fr">&Eacute;ligibilit&eacute; et &Eacute;tapes</span></a>
     </div>
-
-    <p class="translation-note">
-      <span class="lang-en">*Please note the French translation on this site was done by a non-native speaker and may contain grammatical errors. We've done our best.</span>
-      <span class="lang-fr">*Veuillez noter que la traduction fran&ccedil;aise de ce document a &eacute;t&eacute; r&eacute;alis&eacute;e
-      par une personne pour qui le fran&ccedil;ais n'est pas la langue maternelle et qu'elle peut donc contenir
-      des erreurs grammaticales. Nous avons fait de notre mieux.</span>
-    </p>
   </section>
 
   <!-- Quick links to each section of the site -->
@@ -393,6 +374,21 @@
     }
     // On page load, use whatever language was last chosen (defaults to English)
     applyLang(localStorage.getItem('siteLang') || 'fr');
+  </script>
+  <script>
+    // Applies the SITE_LOCKED switch set at the top of this file
+    if (SITE_LOCKED) {
+      document.body.classList.add('site-locked');
+      var overlay = document.createElement('div');
+      overlay.className = 'site-lock-overlay';
+      overlay.innerHTML =
+        '<div class="box">' +
+        '<h2 class="lang-en">Coming Soon</h2><h2 class="lang-fr">Bient&ocirc;t Disponible</h2>' +
+        '<p class="lang-en">This guide is being finalized and will be available shortly. Thank you for your patience.</p>' +
+        '<p class="lang-fr">Ce guide est en cours de finalisation et sera bient&ocirc;t disponible. Merci de votre patience.</p>' +
+        '</div>';
+      document.body.appendChild(overlay);
+    }
   </script>
 
 </body>
