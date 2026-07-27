@@ -247,12 +247,11 @@
 <body>
 
   <!-- ============================================================
-       SITE STATUS SWITCH
-       Change "false" to "true" below to temporarily hide this page
-       behind a "Coming Soon" message (e.g. while awaiting approval).
-       Change it back to "false" to make the page visible again.
+       SITE STATUS SWITCH — this now lives in ONE shared file,
+       site-status.js, so it controls every page at once. To lock
+       or unlock the whole site, edit that single file only.
        ============================================================ -->
-  <script>const SITE_LOCKED = false;</script>
+  <script src="site-status.js"></script>
 
   <!-- Top tricolor + gold ribbon -->
   <div class="ribbon">
