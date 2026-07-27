@@ -74,9 +74,36 @@
     nav { padding: 12px 20px; gap: 14px; }
     .content-wrap { padding: 30px 20px 50px; }
   }
+
+  /* ---------- SITE LOCK / "COMING SOON" OVERLAY ---------- */
+  body.site-locked > *:not(.site-lock-overlay) {
+    filter: blur(10px);
+    pointer-events: none;
+    user-select: none;
+  }
+  .site-lock-overlay {
+    position: fixed; inset: 0; z-index: 9999;
+    background: rgba(247,244,236,0.85);
+    display: flex; align-items: center; justify-content: center;
+    padding: 30px; text-align: center;
+  }
+  .site-lock-overlay .box {
+    max-width: 440px; background: white; border: 1px solid #e7e2d3; border-radius: 12px;
+    padding: 40px 32px; box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+  }
+  .site-lock-overlay h2 { margin-bottom: 10px; font-size: 22px; }
+  .site-lock-overlay p { color: var(--ink-soft); font-size: 14.5px; margin-bottom: 0; }
 </style>
 </head>
 <body>
+
+  <!-- ============================================================
+       SITE STATUS SWITCH — this lives in ONE shared file,
+       site-status.js, so it controls every page at once. To lock
+       or unlock the whole site, edit that single file only.
+       ============================================================ -->
+  <script src="site-status.js"></script>
+
 
   <div class="ribbon"><div class="b1"></div><div class="b2"></div><div class="b3"></div></div>
   <nav>
@@ -228,5 +255,20 @@
     applyLang(localStorage.getItem('siteLang') || 'fr');
   </script>
 
+  <script>
+    // Applies the SITE_LOCKED switch from the shared site-status.js file
+    if (typeof SITE_LOCKED !== 'undefined' && SITE_LOCKED) {
+      document.body.classList.add('site-locked');
+      var overlay = document.createElement('div');
+      overlay.className = 'site-lock-overlay';
+      overlay.innerHTML =
+        '<div class="box">' +
+        '<h2 class="lang-en">Coming Soon</h2><h2 class="lang-fr">Bientôt Disponible</h2>' +
+        '<p class="lang-en">This guide is being finalized and will be available shortly. Thank you for your patience.</p>' +
+        '<p class="lang-fr">Ce guide est en cours de finalisation et sera bientôt disponible. Merci de votre patience.</p>' +
+        '</div>';
+      document.body.appendChild(overlay);
+    }
+  </script>
 </body>
 </html>
