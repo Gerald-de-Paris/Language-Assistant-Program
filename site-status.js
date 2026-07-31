@@ -8,4 +8,4 @@
 // This one file is loaded by every page, so you only ever need
 // to edit it here — not on each individual page.
 // ============================================================
-const SITE_LOCKED = false;
+const SITE_LOCKED = true;
