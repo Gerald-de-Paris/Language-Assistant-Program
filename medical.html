@@ -95,6 +95,13 @@
        ============================================================ -->
   <script src="site-status.js"></script>
 
+  <!-- ============================================================
+       PAGE LOCK SWITCH — change "false" to "true" below to close
+       JUST THIS PAGE (shows "Section Under Maintenance"). The rest
+       of the site stays open. Change back to "false" to reopen it.
+       ============================================================ -->
+  <script>const PAGE_LOCKED = false;</script>
+
 
   <div class="ribbon"><div class="b1"></div><div class="b2"></div><div class="b3"></div></div>
   <nav>
@@ -376,18 +383,32 @@
   </script>
 
   <script>
-    // Applies the SITE_LOCKED switch from the shared site-status.js file
-    if (typeof SITE_LOCKED !== 'undefined' && SITE_LOCKED) {
+    // Applies SITE_LOCKED (whole site) or PAGE_LOCKED (just this page)
+    var siteLocked = (typeof SITE_LOCKED !== 'undefined' && SITE_LOCKED);
+    var pageLocked = (typeof PAGE_LOCKED !== 'undefined' && PAGE_LOCKED);
+    if (siteLocked || pageLocked) {
       document.body.classList.add('site-locked');
       var overlay = document.createElement('div');
       overlay.className = 'site-lock-overlay';
-      overlay.innerHTML =
-        '<div class="box">' +
-        '<h2 class="lang-en">Coming Soon</h2><h2 class="lang-fr">Bientôt Disponible</h2>' +
-        '<p class="lang-en">This guide is being finalized and will be available shortly. Thank you for your patience.</p>' +
-        '<p class="lang-en" style="margin-top:10px; font-size:12.5px; opacity:0.7;">&mdash; G\u00e9rard de Paris</p>' +
-        '<p class="lang-fr">Ce guide est en cours de finalisation et sera bientôt disponible. Merci de votre patience.</p>' +
-        '</div>';
+      if (siteLocked) {
+        overlay.innerHTML =
+          '<div class="box">' +
+          '<h2 class="lang-en">Coming Soon</h2><h2 class="lang-fr">Bient\u00f4t Disponible</h2>' +
+          '<p class="lang-en">This guide is being finalized and will be available shortly. Thank you for your patience.</p>' +
+          '<p class="lang-fr">Ce guide est en cours de finalisation et sera bient\u00f4t disponible. Merci de votre patience.</p>' +
+          '<p class="lang-en" style="margin-top:10px; font-size:12.5px; opacity:0.7;">&mdash; G\u00e9rard de Paris</p>' +
+          '<p class="lang-fr" style="margin-top:10px; font-size:12.5px; opacity:0.7;">&mdash; G\u00e9rard de Paris</p>' +
+          '</div>';
+      } else {
+        overlay.innerHTML =
+          '<div class="box">' +
+          '<h2 class="lang-en">This Section is Under Maintenance</h2><h2 class="lang-fr">Cette Section est en Maintenance</h2>' +
+          '<p class="lang-en">This page will be back shortly. Thank you for your patience.</p>' +
+          '<p class="lang-fr">Cette page sera bient\u00f4t de retour. Merci de votre patience.</p>' +
+          '<p class="lang-en" style="margin-top:10px; font-size:12.5px; opacity:0.7;">&mdash; G\u00e9rard de Paris</p>' +
+          '<p class="lang-fr" style="margin-top:10px; font-size:12.5px; opacity:0.7;">&mdash; G\u00e9rard de Paris</p>' +
+          '</div>';
+      }
       document.body.appendChild(overlay);
     }
   </script>
