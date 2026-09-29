@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Opportunities &amp; Scholarships | Assistant Uganda</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Source+Serif+4:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --blue: #1B3A6B; --red: #B23A2E; --gold: #D9A441;
+    --cream: #F7F4EC; --ink: #232220; --ink-soft: #5A5850;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    background: var(--cream); color: var(--ink); line-height: 1.65;
+    animation: fadeIn 0.5s ease;
+    user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none;
+  }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+  h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; color: var(--blue); font-weight: 600; letter-spacing: -0.3px; }
+  a { color: var(--blue); text-decoration: underline; }
+  nav a { text-decoration: none; }
+
+  .ribbon { height: 6px; display: flex; }
+  .ribbon div { flex: 1; }
+  .ribbon .b1 { background: var(--blue); } .ribbon .b2 { background: var(--gold); } .ribbon .b3 { background: var(--red); }
+
+  nav { background: var(--blue); padding: 14px 40px; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; font-family: 'Inter', sans-serif; }
+  nav a { color: var(--cream); font-size: 13.5px; opacity: 0.85; letter-spacing: 0.2px; transition: opacity 0.15s ease; }
+  nav a:hover { opacity: 1; text-decoration: underline; }
+
+  .content-wrap { max-width: 860px; margin: 0 auto; padding: 50px 40px 70px; }
+  .eyebrow { color: var(--red); font-size: 12.5px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 10px; font-family: 'Inter', sans-serif; }
+  h1.page-title { font-size: 32px; margin-bottom: 10px; }
+  p.lead { font-size: 15.5px; color: var(--ink-soft); margin-bottom: 20px; }
+  h2.section-title { font-size: 21px; margin-top: 38px; margin-bottom: 12px; border-bottom: 2px solid var(--gold); padding-bottom: 6px; }
+  h3.sub-title { font-size: 16.5px; margin-top: 20px; margin-bottom: 8px; color: var(--red); }
+  p { margin-bottom: 14px; font-size: 15.5px; }
+  ul, ol { margin: 0 0 14px 20px; font-size: 15px; }
+  li { margin-bottom: 6px; }
+
+  .note-box { background: white; border-left: 4px solid var(--red); padding: 14px 18px; margin: 18px 0; font-size: 14.5px; border-radius: 4px; }
+  .warn-box { background: #FBEDEA; border: 1px solid var(--red); padding: 14px 18px; margin: 18px 0; font-size: 14px; border-radius: 6px; }
+  .step-box { background: white; border: 1px solid #e7e2d3; border-radius: 8px; padding: 18px 20px; margin: 14px 0; }
+  .check-list { margin: 10px 0 20px; }
+  .check-list li {
+    list-style: none; background: white; border: 1px solid #e7e2d3; border-radius: 6px;
+    padding: 10px 14px 10px 36px; margin-bottom: 8px; font-size: 14.5px; position: relative;
+  }
+  .check-list li::before { content: "☐"; position: absolute; left: 12px; color: var(--gold); font-size: 15px; }
+
+  /* ---------- OPPORTUNITY CARDS ---------- */
+  .opp-card {
+    background: white; border: 1px solid #e7e2d3; border-radius: 10px; padding: 22px;
+    margin-bottom: 20px; transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .opp-card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(27,58,107,0.10); }
+  .opp-head { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 6px; }
+  .opp-head h3 { margin: 0; font-size: 19px; color: var(--blue); }
+  .opp-status {
+    font-family: 'Inter', sans-serif; font-size: 11.5px; font-weight: 700; letter-spacing: 0.4px;
+    padding: 3px 11px; border-radius: 20px; text-transform: uppercase; color: white;
+  }
+  .status-open { background: #3F7D4F; }
+  .status-soon { background: var(--gold); color: #4a3400; }
+  .status-urgent { background: var(--red); }
+  .status-closed { background: #8a8580; }
+  .status-upcoming { background: var(--blue); }
+  .status-varies { background: #7d6a9c; }
+  .opp-countdown { font-family: 'Inter', sans-serif; font-size: 12.5px; color: var(--ink-soft); margin-bottom: 10px; }
+  .opp-meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 6px 16px; font-size: 13.5px; margin: 12px 0; padding: 12px; background: var(--cream); border-radius: 6px; }
+  .opp-meta div b { display: block; font-family: 'Inter', sans-serif; font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--red); margin-bottom: 2px; }
+  .opp-card details { margin-top: 10px; }
+  .opp-card summary { cursor: pointer; font-family: 'Inter', sans-serif; font-size: 13.5px; font-weight: 600; color: var(--blue); padding: 6px 0; }
+  .opp-card details[open] summary { margin-bottom: 6px; }
+  .opp-links { margin-top: 12px; display: flex; gap: 14px; flex-wrap: wrap; font-family: 'Inter', sans-serif; font-size: 13px; }
+  .opp-verified { font-size: 12px; color: var(--ink-soft); margin-top: 10px; font-style: italic; }
+
+  .region-tag-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin: 14px 0 20px; }
+  .region-tag-card { background: white; border: 1px solid #e7e2d3; border-radius: 8px; padding: 16px 18px; }
+  .region-tag-card h3 { font-size: 15.5px; margin-bottom: 6px; color: var(--blue); }
+  .region-tag-card p { font-size: 13.5px; margin-bottom: 0; color: var(--ink-soft); }
+
+  footer { background: var(--blue); color: var(--cream); text-align: center; padding: 24px 20px; font-size: 12.5px; opacity: 0.9; }
+
+  .lang-toggle-btn {
+    background: transparent; border: 1.5px solid var(--cream); color: var(--cream);
+    padding: 5px 14px; border-radius: 20px; font-size: 12.5px; font-weight: 600; cursor: pointer; margin-left: auto;
+    font-family: 'Inter', sans-serif; transition: background 0.15s ease;
+  }
+  .lang-toggle-btn:hover { background: rgba(255,255,255,0.15); }
+  body.lang-fr .lang-en { display: none; }
+  body:not(.lang-fr) .lang-fr { display: none; }
+
+  /* ---------- SITE LOCK / "COMING SOON" OVERLAY ---------- */
+  body.site-locked > *:not(.site-lock-overlay) {
+    filter: blur(10px);
+    pointer-events: none;
+    user-select: none;
+  }
+  .site-lock-overlay {
+    position: fixed; inset: 0; z-index: 9999;
+    background: rgba(247,244,236,0.85);
+    display: flex; align-items: center; justify-content: center;
+    padding: 30px; text-align: center;
+  }
+  .site-lock-overlay .box {
+    max-width: 440px; background: white; border: 1px solid #e7e2d3; border-radius: 12px;
+    padding: 40px 32px; box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+  }
+  .site-lock-overlay h2 { margin-bottom: 10px; font-size: 22px; }
+  .site-lock-overlay p { color: var(--ink-soft); font-size: 14.5px; margin-bottom: 0; }
+
+  @media (max-width: 600px) {
+    nav { padding: 12px 20px; gap: 14px; }
+    .content-wrap { padding: 30px 20px 50px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ============================================================
+       SITE STATUS SWITCH — this lives in ONE shared file,
+       site-status.js, so it controls every page at once. To lock
+       or unlock the whole site, edit that single file only.
+       ============================================================ -->
+  <script src="site-status.js"></script>
+
+  <!-- ============================================================
+       PAGE LOCK SWITCH — change "false" to "true" below to close
+       JUST THIS PAGE (shows "Section Under Maintenance"). The rest
+       of the site stays open. Change back to "false" to reopen it.
+       ============================================================ -->
+  <script>const PAGE_LOCKED = false;</script>
+
+  <div class="ribbon"><div class="b1"></div><div class="b2"></div><div class="b3"></div></div>
+
+  <nav>
+    <a href="index.html"><span class="lang-en">Home</span><span class="lang-fr">Accueil</span></a>
+    <a href="about.html"><span class="lang-en">About</span><span class="lang-fr">À propos</span></a>
+    <a href="eligibility.html"><span class="lang-en">Eligibility</span><span class="lang-fr">Éligibilité</span></a>
+    <a href="application.html"><span class="lang-en">Application</span><span class="lang-fr">Candidature</span></a>
+    <a href="documents.html"><span class="lang-en">Documents</span><span class="lang-fr">Documents</span></a>
+    <a href="life-in-france.html"><span class="lang-en">Life in France</span><span class="lang-fr">Vivre en France</span></a>
+    <a href="housing.html"><span class="lang-en">Housing</span><span class="lang-fr">Logement</span></a>
+    <a href="medical.html"><span class="lang-en">Medical</span><span class="lang-fr">Santé</span></a>
+    <a href="money.html"><span class="lang-en">Money &amp; Taxes</span><span class="lang-fr">Argent et Impôts</span></a>
+    <a href="culture.html"><span class="lang-en">Culture &amp; Community</span><span class="lang-fr">Culture et Communauté</span></a>
+    <a href="next-steps.html"><span class="lang-en">Renewal &amp; Next Steps</span><span class="lang-fr">Renouvellement</span></a>
+    <a href="opportunities.html"><span class="lang-en">Opportunities &amp; Scholarships</span><span class="lang-fr">Opportunités et Bourses</span></a>
+    <a href="glossary.html"><span class="lang-en">Glossary</span><span class="lang-fr">Glossaire</span></a>
+    <button class="lang-toggle-btn" id="langBtn" onclick="toggleLang(); if(window.updateOpportunityStatus) updateOpportunityStatus();">Français</button>
+  </nav>
+
+  <div class="content-wrap">
+    <p class="eyebrow"><span class="lang-en">Beyond the Assistantship</span><span class="lang-fr">Au-delà de l'assistanat</span></p>
+    <h1 class="page-title"><span class="lang-en">Opportunities &amp; Scholarships</span><span class="lang-fr">Opportunités et Bourses</span></h1>
+    <p class="lead">
+      <span class="lang-en">A starting point for scholarships, fellowships, and other opportunities open to Ugandans and other
+        applicants &mdash; whether you're planning what comes after your assistantship, or exploring options
+        alongside it.</span>
+      <span class="lang-fr">Un point de d&eacute;part pour les bourses, programmes de recherche et autres opportunit&eacute;s
+        ouvertes aux Ougandais et &agrave; d'autres candidats &mdash; que vous planifiiez l'apr&egrave;s-assistanat, ou
+        exploriez des options en parall&egrave;le.</span>
+    </p>
+
+    <div class="warn-box">
+      <span class="lang-en">We help you discover and understand opportunities &mdash; we don't guarantee admission, funding, or
+        visas, and we're not affiliated with any of the organisations listed here. Deadlines, eligibility, and
+        funding conditions can and do change. <b>Always confirm details on the official provider's website before
+        applying</b> &mdash; the link is included on every entry below, along with the date we last checked it.</span>
+      <span class="lang-fr">Nous vous aidons &agrave; d&eacute;couvrir et comprendre les opportunit&eacute;s &mdash; nous ne
+        garantissons ni admission, ni financement, ni visa, et nous ne sommes affili&eacute;s &agrave; aucune des
+        organisations list&eacute;es ici. Les &eacute;ch&eacute;ances, crit&egrave;res et conditions de financement peuvent changer.
+        <b>V&eacute;rifiez toujours les d&eacute;tails sur le site officiel du fournisseur avant de postuler</b> &mdash; le
+        lien est inclus pour chaque entr&eacute;e ci-dessous, avec la date de notre derni&egrave;re v&eacute;rification.</span>
+    </div>
+
+    <h2 class="section-title"><span class="lang-en">Featured Current Opportunities</span><span class="lang-fr">Opportunit&eacute;s actuelles &agrave; la une</span></h2>
+    <p style="font-size:13.5px; color:var(--ink-soft);">
+      <span class="lang-en">The status badge and countdown below update automatically based on today's date, so this stays
+        accurate without anyone needing to edit it &mdash; including flipping to "Closed" on its own once a
+        deadline passes.</span>
+      <span class="lang-fr">Le badge de statut et le compte &agrave; rebours ci-dessous se mettent &agrave; jour
+        automatiquement selon la date du jour, donc cela reste exact sans qu'il faille les modifier &mdash; y
+        compris le passage automatique &agrave; "Ferm&eacute;" une fois l'&eacute;ch&eacute;ance pass&eacute;e.</span>
+    </p>
+
+    <!-- CHEVENING -->
+    <div class="opp-card" data-opens="2026-08-04T11:00:00Z" data-deadline="2026-10-06T11:00:00Z">
+      <div class="opp-head">
+        <h3>🇬🇧 Chevening Scholarship</h3>
+        <span class="opp-status">&nbsp;</span>
+      </div>
+      <div class="opp-countdown"></div>
+      <p><span class="lang-en">A UK government scholarship funding a one-year Master's degree in the UK, aimed at applicants with
+        leadership potential who plan to return home afterward. Uganda has its own dedicated Chevening route.</span>
+        <span class="lang-fr">Une bourse du gouvernement britannique finan&ccedil;ant un master d'un an au Royaume-Uni,
+        destin&eacute;e aux candidats ayant un potentiel de leadership et pr&eacute;voyant de rentrer chez eux ensuite.
+        L'Ouganda dispose de sa propre voie Chevening.</span></p>
+      <div class="opp-meta">
+        <div><b><span class="lang-en">Level</span><span class="lang-fr">Niveau</span></b><span class="lang-en">Master's (1 year)</span><span class="lang-fr">Master (1 an)</span></div>
+        <div><b><span class="lang-en">Funding</span><span class="lang-fr">Financement</span></b><span class="lang-en">Fully funded</span><span class="lang-fr">Enti&egrave;rement financ&eacute;e</span></div>
+        <div><b><span class="lang-en">Location</span><span class="lang-fr">Lieu</span></b><span class="lang-en">United Kingdom</span><span class="lang-fr">Royaume-Uni</span></div>
+        <div><b><span class="lang-en">Deadline</span><span class="lang-fr">&Eacute;ch&eacute;ance</span></b>6 Oct 2026, 11:00 UTC</div>
+      </div>
+      <details>
+        <summary><span class="lang-en">Eligibility &amp; requirements</span><span class="lang-fr">&Eacute;ligibilit&eacute; et exigences</span></summary>
+        <ul>
+          <li><span class="lang-en">Citizenship from a Chevening-eligible country/territory (Uganda is eligible)</span><span class="lang-fr">Citoyennet&eacute; d'un pays/territoire &eacute;ligible Chevening (l'Ouganda est &eacute;ligible)</span></li>
+          <li><span class="lang-en">Undergraduate degree completed at least 2 years before the deadline</span><span class="lang-fr">Licence obtenue au moins 2 ans avant l'&eacute;ch&eacute;ance</span></li>
+          <li><span class="lang-en">At least 2,800 hours of work experience after graduation (roughly 2 years full-time)</span><span class="lang-fr">Au moins 2 800 heures d'exp&eacute;rience professionnelle apr&egrave;s le dipl&ocirc;me (environ 2 ans &agrave; temps plein)</span></li>
+          <li><span class="lang-en">Select three different eligible UK Master's courses as part of your application</span><span class="lang-fr">S&eacute;lectionner trois formations de master britanniques &eacute;ligibles diff&eacute;rentes</span></li>
+          <li><span class="lang-en">Agree to return to your home country for at least two years after the scholarship</span><span class="lang-fr">Accepter de rentrer dans votre pays pendant au moins deux ans apr&egrave;s la bourse</span></li>
+          <li><span class="lang-en">IELTS/TOEFL isn't required by Chevening itself, though your chosen university may still ask for one</span><span class="lang-fr">L'IELTS/TOEFL n'est pas exig&eacute; par Chevening lui-m&ecirc;me, mais votre universit&eacute; choisie peut le demander</span></li>
+        </ul>
+      </details>
+      <div class="opp-links">
+        <a href="https://www.chevening.org/scholarship/uganda/" target="_blank">🔗 <span class="lang-en">Official Uganda page</span><span class="lang-fr">Page officielle Ouganda</span></a>
+        <a href="https://www.chevening.org/scholarships/application-timeline/" target="_blank">🔗 <span class="lang-en">Application timeline</span><span class="lang-fr">Calendrier de candidature</span></a>
+      </div>
+      <p class="opp-verified"><span class="lang-en">Last verified: September 2026, against chevening.org</span><span class="lang-fr">Derni&egrave;re v&eacute;rification&nbsp;: septembre 2026, sur chevening.org</span></p>
+    </div>
+
+    <!-- COMMONWEALTH MASTER'S -->
+    <div class="opp-card" data-opens="2026-09-08T00:00:00Z" data-deadline="2026-10-20T15:00:00Z">
+      <div class="opp-head">
+        <h3>🇬🇧 Commonwealth Master's Scholarship</h3>
+        <span class="opp-status">&nbsp;</span>
+      </div>
+      <div class="opp-countdown"></div>
+      <p><span class="lang-en">Funded by the UK's Foreign, Commonwealth &amp; Development Office and run by the Commonwealth
+        Scholarship Commission (CSC), for applicants from lower and middle-income Commonwealth countries who
+        couldn't otherwise afford a UK Master's.</span>
+        <span class="lang-fr">Financ&eacute;e par le minist&egrave;re britannique des Affaires &eacute;trang&egrave;res et g&eacute;r&eacute;e par la
+        Commonwealth Scholarship Commission (CSC), pour les candidats de pays du Commonwealth &agrave; revenu
+        faible ou interm&eacute;diaire qui ne pourraient pas autrement financer un master au Royaume-Uni.</span></p>
+      <div class="opp-meta">
+        <div><b><span class="lang-en">Level</span><span class="lang-fr">Niveau</span></b><span class="lang-en">Master's</span><span class="lang-fr">Master</span></div>
+        <div><b><span class="lang-en">Funding</span><span class="lang-fr">Financement</span></b><span class="lang-en">Fully funded</span><span class="lang-fr">Enti&egrave;rement financ&eacute;e</span></div>
+        <div><b><span class="lang-en">Location</span><span class="lang-fr">Lieu</span></b><span class="lang-en">United Kingdom</span><span class="lang-fr">Royaume-Uni</span></div>
+        <div><b><span class="lang-en">Deadline</span><span class="lang-fr">&Eacute;ch&eacute;ance</span></b>20 Oct 2026, 16:00 BST</div>
+      </div>
+      <details>
+        <summary><span class="lang-en">Eligibility &amp; requirements</span><span class="lang-fr">&Eacute;ligibilit&eacute; et exigences</span></summary>
+        <ul>
+          <li><span class="lang-en">Citizen of, or granted refugee status by, an eligible Commonwealth country (Uganda is eligible)</span><span class="lang-fr">Citoyen(ne) d'un pays du Commonwealth &eacute;ligible, ou statut de r&eacute;fugi&eacute; (l'Ouganda est &eacute;ligible)</span></li>
+          <li><span class="lang-en">A first degree of at least UK 2:1 standard (or a lower second plus a relevant postgraduate qualification)</span><span class="lang-fr">Une licence &eacute;quivalente au moins au 2:1 britannique (ou un niveau inf&eacute;rieur plus un dipl&ocirc;me de troisi&egrave;me cycle pertinent)</span></li>
+          <li><span class="lang-en">Genuinely unable to afford UK study without the scholarship &mdash; this is an actual eligibility condition, not just a preference</span><span class="lang-fr">Incapacit&eacute; r&eacute;elle &agrave; financer des &eacute;tudes au Royaume-Uni sans la bourse &mdash; c'est une v&eacute;ritable condition d'&eacute;ligibilit&eacute;</span></li>
+          <li><b><span class="lang-en">Important:</span><span class="lang-fr">Important&nbsp;:</span></b> <span class="lang-en">you must apply through an approved nominating agency (not directly to CSC) &mdash; your nominator's own deadline is often earlier than the CSC deadline above</span><span class="lang-fr">vous devez postuler via un organisme nominateur agr&eacute;&eacute; (pas directement aupr&egrave;s de la CSC) &mdash; l'&eacute;ch&eacute;ance de votre nominateur est souvent plus t&ocirc;t que celle de la CSC ci-dessus</span></li>
+        </ul>
+      </details>
+      <div class="opp-links">
+        <a href="https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/" target="_blank">🔗 <span class="lang-en">Official CSC page</span><span class="lang-fr">Page officielle CSC</span></a>
+      </div>
+      <p class="opp-verified"><span class="lang-en">Last verified: September 2026, against cscuk.fcdo.gov.uk</span><span class="lang-fr">Derni&egrave;re v&eacute;rification&nbsp;: septembre 2026, sur cscuk.fcdo.gov.uk</span></p>
+    </div>
+
+    <!-- RHODES EAST AFRICA -->
+    <div class="opp-card" data-opens="2026-06-01T00:00:00Z" data-deadline="2026-08-27T20:59:00Z">
+      <div class="opp-head">
+        <h3>🇬🇧 Rhodes Scholarship &mdash; East Africa</h3>
+        <span class="opp-status">&nbsp;</span>
+      </div>
+      <div class="opp-countdown"></div>
+      <p><span class="lang-en">A fully funded, highly prestigious postgraduate scholarship at the University of Oxford. The East
+        Africa constituency, which includes Uganda, runs its own dedicated annual cycle.</span>
+        <span class="lang-fr">Une bourse de troisi&egrave;me cycle enti&egrave;rement financ&eacute;e et tr&egrave;s prestigieuse &agrave;
+        l'Universit&eacute; d'Oxford. La circonscription Afrique de l'Est, qui inclut l'Ouganda, a son propre cycle
+        annuel d&eacute;di&eacute;.</span></p>
+      <div class="opp-meta">
+        <div><b><span class="lang-en">Level</span><span class="lang-fr">Niveau</span></b><span class="lang-en">Postgraduate (any subject)</span><span class="lang-fr">Troisi&egrave;me cycle (toute discipline)</span></div>
+        <div><b><span class="lang-en">Funding</span><span class="lang-fr">Financement</span></b><span class="lang-en">Fully funded</span><span class="lang-fr">Enti&egrave;rement financ&eacute;e</span></div>
+        <div><b><span class="lang-en">Location</span><span class="lang-fr">Lieu</span></b><span class="lang-en">Oxford, United Kingdom</span><span class="lang-fr">Oxford, Royaume-Uni</span></div>
+        <div><b><span class="lang-en">2027 cycle deadline</span><span class="lang-fr">&Eacute;ch&eacute;ance cycle 2027</span></b>27 Aug 2026</div>
+      </div>
+      <details>
+        <summary><span class="lang-en">Eligibility &amp; requirements</span><span class="lang-fr">&Eacute;ligibilit&eacute; et exigences</span></summary>
+        <ul>
+          <li><span class="lang-en">Citizenship of Uganda, Tanzania, Rwanda, South Sudan, or Burundi (Kenyan citizens apply via the
+            separate Kenya constituency instead)</span>
+            <span class="lang-fr">Citoyennet&eacute; de l'Ouganda, de la Tanzanie, du Rwanda, du Soudan du Sud ou du
+            Burundi (les citoyens kenyans postulent via la circonscription Kenya distincte)</span></li>
+          <li><span class="lang-en">Aged 18&ndash;24 as of 1 October in the relevant year (exact cut-off confirmed each cycle)</span><span class="lang-fr">&Acirc;g&eacute;(e) de 18 &agrave; 24 ans au 1er octobre de l'ann&eacute;e concern&eacute;e (date exacte confirm&eacute;e chaque cycle)</span></li>
+          <li><span class="lang-en">Resident in an eligible East Africa country (or Kenya) for at least 5 of the last 10 years</span><span class="lang-fr">R&eacute;sident dans un pays &eacute;ligible d'Afrique de l'Est (ou au Kenya) pendant au moins 5 des 10 derni&egrave;res ann&eacute;es</span></li>
+          <li><span class="lang-en">No application fee</span><span class="lang-fr">Aucun frais de candidature</span></li>
+        </ul>
+      </details>
+      <div class="opp-links">
+        <a href="https://www.rhodeshouse.ox.ac.uk/scholarships/applications/east-africa/" target="_blank">🔗 <span class="lang-en">Official East Africa page</span><span class="lang-fr">Page officielle Afrique de l'Est</span></a>
+      </div>
+      <p class="opp-verified"><span class="lang-en">Last verified: September 2026, against rhodeshouse.ox.ac.uk. Watch this page for the 2028 cycle to open, typically around June the year before.</span><span class="lang-fr">Derni&egrave;re v&eacute;rification&nbsp;: septembre 2026, sur rhodeshouse.ox.ac.uk. Surveillez cette page pour l'ouverture du cycle 2028, g&eacute;n&eacute;ralement vers juin de l'ann&eacute;e pr&eacute;c&eacute;dente.</span></p>
+    </div>
+
+    <!-- SCHWARZMAN -->
+    <div class="opp-card" data-deadline="2026-09-09T19:00:00Z">
+      <div class="opp-head">
+        <h3>🇨🇳 Schwarzman Scholars</h3>
+        <span class="opp-status">&nbsp;</span>
+      </div>
+      <div class="opp-countdown"></div>
+      <p><span class="lang-en">A fully funded, one-year Master's in Global Affairs at Tsinghua University in Beijing, focused on
+        leadership and understanding China's role in the world.</span>
+        <span class="lang-fr">Un master d'un an enti&egrave;rement financ&eacute; en affaires mondiales &agrave; l'Universit&eacute;
+        Tsinghua &agrave; P&eacute;kin, ax&eacute; sur le leadership et la compr&eacute;hension du r&ocirc;le de la Chine dans le
+        monde.</span></p>
+      <div class="opp-meta">
+        <div><b><span class="lang-en">Level</span><span class="lang-fr">Niveau</span></b><span class="lang-en">Master's (1 year)</span><span class="lang-fr">Master (1 an)</span></div>
+        <div><b><span class="lang-en">Funding</span><span class="lang-fr">Financement</span></b><span class="lang-en">Fully funded</span><span class="lang-fr">Enti&egrave;rement financ&eacute;e</span></div>
+        <div><b><span class="lang-en">Location</span><span class="lang-fr">Lieu</span></b><span class="lang-en">Beijing, China</span><span class="lang-fr">P&eacute;kin, Chine</span></div>
+        <div><b><span class="lang-en">Next U.S./Global cycle</span><span class="lang-fr">Prochain cycle US/Mondial</span></b><span class="lang-en">Expected Apr&ndash;Sep 2027</span><span class="lang-fr">Attendu avr.&ndash;sept. 2027</span></div>
+      </div>
+      <details>
+        <summary><span class="lang-en">Eligibility &amp; requirements</span><span class="lang-fr">&Eacute;ligibilit&eacute; et exigences</span></summary>
+        <ul>
+          <li><span class="lang-en">Aged 18&ndash;29 as of August 1 of your enrolment year</span><span class="lang-fr">&Acirc;g&eacute;(e) de 18 &agrave; 29 ans au 1er ao&ucirc;t de l'ann&eacute;e d'inscription</span></li>
+          <li><span class="lang-en">Undergraduate degree completed, or on track to complete, before the programme starts</span><span class="lang-fr">Licence obtenue, ou en voie de l'&ecirc;tre, avant le d&eacute;but du programme</span></li>
+          <li><span class="lang-en">Open to applicants worldwide, non-Chinese passport holders apply through the "U.S./Global" cycle</span><span class="lang-fr">Ouvert aux candidats du monde entier, les non-titulaires d'un passeport chinois postulent via le cycle "US/Mondial"</span></li>
+          <li><span class="lang-en">No application fee</span><span class="lang-fr">Aucun frais de candidature</span></li>
+        </ul>
+      </details>
+      <div class="opp-links">
+        <a href="https://www.schwarzmanscholars.org/admissions/" target="_blank">🔗 <span class="lang-en">Official admissions page</span><span class="lang-fr">Page officielle des admissions</span></a>
+      </div>
+      <p class="opp-verified"><span class="lang-en">Last verified: September 2026, against schwarzmanscholars.org &mdash; the 2027/28 window closed
+        just before this was written, so we're watching for the 2028/29 window to open.</span>
+        <span class="lang-fr">Derni&egrave;re v&eacute;rification&nbsp;: septembre 2026, sur schwarzmanscholars.org &mdash; le
+        cycle 2027/28 vient de se fermer, nous surveillons l'ouverture du cycle 2028/29.</span></p>
+    </div>
+
+    <!-- DAAD EPOS -->
+    <div class="opp-card">
+      <div class="opp-head">
+        <h3>🇩🇪 DAAD EPOS Postgraduate Scholarships</h3>
+        <span class="opp-status status-varies"><span class="lang-en">Varies by Programme</span><span class="lang-fr">Variable selon le programme</span></span>
+      </div>
+      <p><span class="lang-en">EPOS is not a single scholarship &mdash; it's a scholarship route attached to specific
+        development-related Master's programmes at German universities (development economics, urban management,
+        renewable energy management, and others). Each programme sets its own deadline and process.</span>
+        <span class="lang-fr">EPOS n'est pas une bourse unique &mdash; c'est un dispositif de bourses li&eacute; &agrave;
+        des programmes de master ax&eacute;s sur le d&eacute;veloppement dans des universit&eacute;s allemandes (&eacute;conomie du
+        d&eacute;veloppement, gestion urbaine, gestion des &eacute;nergies renouvelables, entre autres). Chaque programme fixe
+        sa propre &eacute;ch&eacute;ance et sa propre proc&eacute;dure.</span></p>
+      <div class="opp-meta">
+        <div><b><span class="lang-en">Level</span><span class="lang-fr">Niveau</span></b><span class="lang-en">Master's / postgraduate</span><span class="lang-fr">Master / troisi&egrave;me cycle</span></div>
+        <div><b><span class="lang-en">Funding</span><span class="lang-fr">Financement</span></b><span class="lang-en">Fully funded</span><span class="lang-fr">Enti&egrave;rement financ&eacute;e</span></div>
+        <div><b><span class="lang-en">Location</span><span class="lang-fr">Lieu</span></b><span class="lang-en">Germany</span><span class="lang-fr">Allemagne</span></div>
+      </div>
+      <div class="warn-box" style="margin:10px 0;">
+        <span class="lang-en">Since deadlines vary by programme, search the official DAAD database for the specific course you're
+          interested in rather than assuming one universal date.</span>
+        <span class="lang-fr">Les &eacute;ch&eacute;ances variant selon le programme, recherchez le cours pr&eacute;cis qui vous
+          int&eacute;resse dans la base officielle du DAAD plut&ocirc;t que de supposer une date unique.</span>
+      </div>
+      <div class="opp-links">
+        <a href="https://www.daad.de/en/information-services-for-higher-education-institutions/further-information-on-daad-programmes/epos/" target="_blank">🔗 <span class="lang-en">Official EPOS overview</span><span class="lang-fr">Aper&ccedil;u officiel EPOS</span></a>
+      </div>
+      <p class="opp-verified"><span class="lang-en">Last verified: September 2026, against daad.de</span><span class="lang-fr">Derni&egrave;re v&eacute;rification&nbsp;: septembre 2026, sur daad.de</span></p>
+    </div>
+
+    <!-- ERASMUS MUNDUS -->
+    <div class="opp-card">
+      <div class="opp-head">
+        <h3>🇪🇺 Erasmus Mundus Joint Masters</h3>
+        <span class="opp-status status-varies"><span class="lang-en">Varies by Programme</span><span class="lang-fr">Variable selon le programme</span></span>
+      </div>
+      <p><span class="lang-en">Joint Master's degrees taught across two or more European universities, some with competitive
+        scholarships covering tuition and living costs. Like EPOS, there's no single application deadline &mdash;
+        each joint programme runs its own process.</span>
+        <span class="lang-fr">Des masters conjoints enseign&eacute;s dans deux universit&eacute;s europ&eacute;ennes ou plus,
+        certains avec des bourses comp&eacute;titives couvrant les frais de scolarit&eacute; et de vie. Comme pour EPOS, il
+        n'y a pas d'&eacute;ch&eacute;ance unique &mdash; chaque programme conjoint suit son propre processus.</span></p>
+      <div class="opp-meta">
+        <div><b><span class="lang-en">Level</span><span class="lang-fr">Niveau</span></b><span class="lang-en">Master's</span><span class="lang-fr">Master</span></div>
+        <div><b><span class="lang-en">Funding</span><span class="lang-fr">Financement</span></b><span class="lang-en">Selected programmes, fully funded</span><span class="lang-fr">Certains programmes, enti&egrave;rement financ&eacute;s</span></div>
+        <div><b><span class="lang-en">Location</span><span class="lang-fr">Lieu</span></b><span class="lang-en">Multiple EU countries</span><span class="lang-fr">Plusieurs pays de l'UE</span></div>
+      </div>
+      <div class="opp-links">
+        <a href="https://erasmus-plus.ec.europa.eu/" target="_blank">🔗 <span class="lang-en">Official Erasmus+ site &amp; catalogue</span><span class="lang-fr">Site officiel Erasmus+ et catalogue</span></a>
+      </div>
+      <p class="opp-verified"><span class="lang-en">Last verified: September 2026, against erasmus-plus.ec.europa.eu</span><span class="lang-fr">Derni&egrave;re v&eacute;rification&nbsp;: septembre 2026, sur erasmus-plus.ec.europa.eu</span></p>
+    </div>
+
+    <h2 class="section-title"><span class="lang-en">Browse by Region</span><span class="lang-fr">Parcourir par r&eacute;gion</span></h2>
+    <p><span class="lang-en">We're adding fully verified entries region by region. In the meantime, these are well-known starting
+      points worth researching directly on their official sites:</span>
+      <span class="lang-fr">Nous ajoutons progressivement des entr&eacute;es enti&egrave;rement v&eacute;rifi&eacute;es par r&eacute;gion. En
+      attendant, voici des points de d&eacute;part connus &agrave; explorer directement sur leurs sites officiels&nbsp;:</span></p>
+    <div class="region-tag-grid">
+      <div class="region-tag-card">
+        <h3>🇬🇧 <span class="lang-en">United Kingdom</span><span class="lang-fr">Royaume-Uni</span></h3>
+        <p>Chevening, Commonwealth Scholarships, Rhodes, <span class="lang-en">university-specific funding</span><span class="lang-fr">financements sp&eacute;cifiques aux universit&eacute;s</span></p>
+      </div>
+      <div class="region-tag-card">
+        <h3>🇪🇺 <span class="lang-en">Europe</span><span class="lang-fr">Europe</span></h3>
+        <p>DAAD (Germany), Erasmus Mundus, Eiffel Excellence (France), <span class="lang-en">other government/university scholarships</span><span class="lang-fr">autres bourses gouvernementales/universitaires</span></p>
+      </div>
+      <div class="region-tag-card">
+        <h3>🇺🇸 <span class="lang-en">United States</span><span class="lang-fr">&Eacute;tats-Unis</span></h3>
+        <p>Fulbright, Mastercard Foundation programmes, <span class="lang-en">university-specific graduate funding</span><span class="lang-fr">financements universitaires sp&eacute;cifiques</span></p>
+      </div>
+      <div class="region-tag-card">
+        <h3>🌏 <span class="lang-en">Asia</span><span class="lang-fr">Asie</span></h3>
+        <p>Schwarzman Scholars (China), MEXT (Japan), Chinese Government Scholarships</p>
+      </div>
+      <div class="region-tag-card">
+        <h3>🌍 <span class="lang-en">Africa</span><span class="lang-fr">Afrique</span></h3>
+        <p><span class="lang-en">Mastercard Foundation programmes, African university scholarships, regional exchange opportunities</span><span class="lang-fr">Programmes Mastercard Foundation, bourses universitaires africaines, &eacute;changes r&eacute;gionaux</span></p>
+      </div>
+    </div>
+
+    <h2 class="section-title"><span class="lang-en">Other Kinds of Opportunities</span><span class="lang-fr">Autres types d'opportunit&eacute;s</span></h2>
+    <p><span class="lang-en">Beyond degree scholarships, keep an eye out for:</span><span class="lang-fr">Au-del&agrave; des bourses de dipl&ocirc;me, gardez aussi un &oelig;il sur&nbsp;:</span></p>
+    <div class="region-tag-grid">
+      <div class="region-tag-card">
+        <h3><span class="lang-en">Fellowships</span><span class="lang-fr">Programmes de recherche</span></h3>
+        <p><span class="lang-en">Research and professional fellowships, often shorter than a degree but highly competitive</span><span class="lang-fr">Bourses de recherche et professionnelles, souvent plus courtes qu'un dipl&ocirc;me mais tr&egrave;s comp&eacute;titives</span></p>
+      </div>
+      <div class="region-tag-card">
+        <h3><span class="lang-en">Language Opportunities</span><span class="lang-fr">Opportunit&eacute;s linguistiques</span></h3>
+        <p><span class="lang-en">Language assistant programmes (like TAPIF, covered elsewhere on this site), DELF/DALF-linked opportunities, Alliance Fran&ccedil;aise programmes</span><span class="lang-fr">Programmes d'assistant de langue (comme TAPIF, couvert ailleurs sur ce site), opportunit&eacute;s li&eacute;es au DELF/DALF, programmes de l'Alliance Fran&ccedil;aise</span></p>
+      </div>
+      <div class="region-tag-card">
+        <h3><span class="lang-en">Internships</span><span class="lang-fr">Stages</span></h3>
+        <p><span class="lang-en">International organisations, NGOs, government, and private-sector internships</span><span class="lang-fr">Stages dans des organisations internationales, ONG, administrations et le secteur priv&eacute;</span></p>
+      </div>
+      <div class="region-tag-card">
+        <h3><span class="lang-en">Youth Programmes &amp; Competitions</span><span class="lang-fr">Programmes jeunesse et concours</span></h3>
+        <p><span class="lang-en">Leadership programmes, innovation and entrepreneurship challenges, essay and research competitions</span><span class="lang-fr">Programmes de leadership, d&eacute;fis d'innovation et d'entrepreneuriat, concours d'essais et de recherche</span></p>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);"><i>
+      <span class="lang-en">We'll add fully verified, specific entries to these categories over time, the same careful way as the
+      scholarships above &mdash; rather than listing unverified opportunities just to fill space.</span>
+      <span class="lang-fr">Nous ajouterons progressivement des entr&eacute;es sp&eacute;cifiques et v&eacute;rifi&eacute;es &agrave; ces
+      cat&eacute;gories, avec le m&ecirc;me soin que pour les bourses ci-dessus &mdash; plut&ocirc;t que de lister des
+      opportunit&eacute;s non v&eacute;rifi&eacute;es juste pour remplir la page.</span>
+    </i></p>
+
+    <h2 class="section-title"><span class="lang-en">Application Checklist</span><span class="lang-fr">Liste de contr&ocirc;le de candidature</span></h2>
+    <p><span class="lang-en">A general checklist that applies to most scholarship applications &mdash; adapt it to whichever
+      opportunity you're preparing for:</span>
+      <span class="lang-fr">Une liste g&eacute;n&eacute;rale applicable &agrave; la plupart des candidatures de bourse &mdash;
+      adaptez-la &agrave; l'opportunit&eacute; que vous pr&eacute;parez&nbsp;:</span></p>
+    <ul class="check-list">
+      <li><span class="lang-en">Check eligibility carefully against the official criteria</span><span class="lang-fr">V&eacute;rifiez soigneusement l'&eacute;ligibilit&eacute; selon les crit&egrave;res officiels</span></li>
+      <li><span class="lang-en">Create an account on the official application platform</span><span class="lang-fr">Cr&eacute;ez un compte sur la plateforme de candidature officielle</span></li>
+      <li><span class="lang-en">Prepare your CV</span><span class="lang-fr">Pr&eacute;parez votre CV</span></li>
+      <li><span class="lang-en">Prepare your academic transcript(s) and degree certificate(s)</span><span class="lang-fr">Pr&eacute;parez vos relev&eacute;s de notes et dipl&ocirc;mes</span></li>
+      <li><span class="lang-en">Prepare a copy of your passport/ID</span><span class="lang-fr">Pr&eacute;parez une copie de votre passeport/pi&egrave;ce d'identit&eacute;</span></li>
+      <li><span class="lang-en">Contact your referees early, and confirm they've understood what's expected of them</span><span class="lang-fr">Contactez vos r&eacute;f&eacute;rents t&ocirc;t, et confirmez qu'ils ont compris ce qui est attendu d'eux</span></li>
+      <li><span class="lang-en">Draft your motivation letter/personal statement</span><span class="lang-fr">R&eacute;digez votre lettre de motivation</span></li>
+      <li><span class="lang-en">Draft your study proposal, if required</span><span class="lang-fr">R&eacute;digez votre projet d'&eacute;tudes, si requis</span></li>
+      <li><span class="lang-en">Book/complete an English test if required (IELTS/TOEFL)</span><span class="lang-fr">R&eacute;servez/passez un test d'anglais si requis (IELTS/TOEFL)</span></li>
+      <li><span class="lang-en">Submit any required university application alongside the scholarship application</span><span class="lang-fr">Soumettez toute candidature universitaire requise en parall&egrave;le de la candidature &agrave; la bourse</span></li>
+      <li><span class="lang-en">Submit the scholarship application itself, well before the deadline</span><span class="lang-fr">Soumettez la candidature &agrave; la bourse elle-m&ecirc;me, bien avant l'&eacute;ch&eacute;ance</span></li>
+      <li><span class="lang-en">Save your confirmation/reference number</span><span class="lang-fr">Conservez votre num&eacute;ro de confirmation/r&eacute;f&eacute;rence</span></li>
+      <li><span class="lang-en">Check your email (including spam) regularly afterward</span><span class="lang-fr">V&eacute;rifiez r&eacute;guli&egrave;rement vos e-mails (y compris les spams) ensuite</span></li>
+    </ul>
+
+    <div class="note-box">
+      <span class="lang-en">Present your real experience in the strongest and clearest way possible. Never fabricate experience,
+        fake documents, exaggerate hardship, invent publications, misrepresent referees, or use someone else's
+        identity &mdash; beyond being dishonest, this can get an application permanently disqualified, and can
+        follow you into future applications.</span>
+      <span class="lang-fr">Pr&eacute;sentez votre exp&eacute;rience r&eacute;elle de la mani&egrave;re la plus forte et la plus claire
+        possible. Ne fabriquez jamais d'exp&eacute;rience, de faux documents, n'exag&eacute;rez pas vos difficult&eacute;s,
+        n'inventez pas de publications, ne d&eacute;naturez pas vos r&eacute;f&eacute;rents, et n'utilisez jamais l'identit&eacute;
+        de quelqu'un d'autre &mdash; au-del&agrave; d'&ecirc;tre malhonn&ecirc;te, cela peut disqualifier d&eacute;finitivement une
+        candidature, et vous suivre dans vos candidatures futures.</span>
+    </div>
+
+    <p style="font-size:13px; color:var(--ink-soft);"><i>
+      <span class="lang-en">This page focuses on quality over quantity &mdash; a shorter list of thoroughly checked opportunities,
+      rather than a long list of unverified ones. If you know of an opportunity you'd like to see added, it's
+      worth researching it directly on the provider's own official site.</span>
+      <span class="lang-fr">Cette page privil&eacute;gie la qualit&eacute; &agrave; la quantit&eacute; &mdash; une liste plus courte
+      d'opportunit&eacute;s soigneusement v&eacute;rifi&eacute;es, plut&ocirc;t qu'une longue liste non v&eacute;rifi&eacute;e. Si vous connaissez
+      une opportunit&eacute; &agrave; ajouter, il vaut la peine de la rechercher directement sur le site officiel du
+      fournisseur.</span>
+    </i></p>
+  </div>
+
+  <footer>
+    &copy; Assistant de Langue Uganda &mdash; G&eacute;rard de Paris
+    <br><span style="opacity:0.75; font-size:11.5px;">
+    <span class="lang-en">Last updated: 2026</span>
+    <span class="lang-fr">Derni&egrave;re mise &agrave; jour&nbsp;: 2026</span>
+    </span>
+  </footer>
+
+  <script>
+    document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+    document.addEventListener('copy', function(e) { e.preventDefault(); });
+  </script>
+
+  <script>
+    // Computes each opportunity card's status and "days remaining" live,
+    // based on the visitor's own clock — no manual updates needed as time passes.
+    function updateOpportunityStatus() {
+      var isFr = document.body.classList.contains('lang-fr');
+      var now = new Date();
+      document.querySelectorAll('.opp-card[data-deadline]').forEach(function (card) {
+        var deadline = new Date(card.getAttribute('data-deadline'));
+        var opensAttr = card.getAttribute('data-opens');
+        var opens = opensAttr ? new Date(opensAttr) : null;
+        var badge = card.querySelector('.opp-status');
+        var countdown = card.querySelector('.opp-countdown');
+        if (!badge || !countdown) return;
+
+        var diffMs = deadline - now;
+        var diffDays = Math.ceil(diffMs / (1000 * 60 * 60 * 24));
+
+        if (opens && now < opens) {
+          badge.textContent = isFr ? 'Bientôt Ouvert' : 'Opening Soon';
+          badge.className = 'opp-status status-upcoming';
+          countdown.textContent = '';
+        } else if (diffMs > 0) {
+          if (diffDays <= 7) {
+            badge.textContent = isFr ? 'Ferme Bientôt' : 'Closing Soon';
+            badge.className = 'opp-status status-urgent';
+          } else if (diffDays <= 30) {
+            badge.textContent = isFr ? 'Ferme ce Mois-ci' : 'Closing This Month';
+            badge.className = 'opp-status status-soon';
+          } else {
+            badge.textContent = isFr ? 'Ouvert' : 'Open';
+            badge.className = 'opp-status status-open';
+          }
+          if (isFr) {
+            countdown.textContent = diffDays + (diffDays === 1 ? ' jour restant' : ' jours restants');
+          } else {
+            countdown.textContent = diffDays + (diffDays === 1 ? ' day remaining' : ' days remaining');
+          }
+        } else {
+          badge.textContent = isFr ? 'Fermé' : 'Closed';
+          badge.className = 'opp-status status-closed';
+          countdown.textContent = isFr
+            ? 'Candidatures closes — préparez le prochain cycle'
+            : 'Applications closed — prepare for the next cycle';
+        }
+      });
+    }
+    window.updateOpportunityStatus = updateOpportunityStatus;
+    document.addEventListener('DOMContentLoaded', updateOpportunityStatus);
+  </script>
+
+  <script>
+    // Applies SITE_LOCKED (whole site) or PAGE_LOCKED (just this page)
+    var siteLocked = (typeof SITE_LOCKED !== 'undefined' && SITE_LOCKED);
+    var pageLocked = (typeof PAGE_LOCKED !== 'undefined' && PAGE_LOCKED);
+    if (siteLocked || pageLocked) {
+      document.body.classList.add('site-locked');
+      var overlay = document.createElement('div');
+      overlay.className = 'site-lock-overlay';
+      if (siteLocked) {
+        overlay.innerHTML =
+          '<div class="box">' +
+          '<h2 class="lang-en">Coming Soon</h2><h2 class="lang-fr">Bient\u00f4t Disponible</h2>' +
+          '<p class="lang-en">This guide is being finalized and will be available shortly. Thank you for your patience.</p>' +
+          '<p class="lang-fr">Ce guide est en cours de finalisation et sera bient\u00f4t disponible. Merci de votre patience.</p>' +
+          '<p class="lang-en" style="margin-top:10px; font-size:12.5px; opacity:0.7;">&mdash; G\u00e9rard de Paris</p>' +
+          '<p class="lang-fr" style="margin-top:10px; font-size:12.5px; opacity:0.7;">&mdash; G\u00e9rard de Paris</p>' +
+          '</div>';
+      } else {
+        overlay.innerHTML =
+          '<div class="box">' +
+          '<h2 class="lang-en">This Section is Under Maintenance</h2><h2 class="lang-fr">Cette Section est en Maintenance</h2>' +
+          '<p class="lang-en">This page will be back shortly. Thank you for your patience.</p>' +
+          '<p class="lang-fr">Cette page sera bient\u00f4t de retour. Merci de votre patience.</p>' +
+          '<p class="lang-en" style="margin-top:10px; font-size:12.5px; opacity:0.7;">&mdash; G\u00e9rard de Paris</p>' +
+          '<p class="lang-fr" style="margin-top:10px; font-size:12.5px; opacity:0.7;">&mdash; G\u00e9rard de Paris</p>' +
+          '</div>';
+      }
+      document.body.appendChild(overlay);
+    }
+  </script>
+
+  <script>
+    function applyLang(lang) {
+      document.body.classList.toggle('lang-fr', lang === 'fr');
+      document.getElementById('langBtn').textContent = lang === 'fr' ? 'English' : 'Fran\u00e7ais';
+      localStorage.setItem('siteLang', lang);
+      if (window.updateOpportunityStatus) updateOpportunityStatus();
+    }
+    function toggleLang() {
+      var current = document.body.classList.contains('lang-fr') ? 'fr' : 'en';
+      applyLang(current === 'fr' ? 'en' : 'fr');
+    }
+    applyLang(localStorage.getItem('siteLang') || 'fr');
+  </script>
+
+</body>
+</html>
